@@ -250,6 +250,13 @@ document.querySelectorAll('.social-link').forEach(link => {
             duration: 0.6,
             ease: 'power2.out'
         });
+        
+        // Add green glow effect
+        this.style.boxShadow = '0 0 20px rgba(16, 185, 129, 0.6)';
+    });
+    
+    link.addEventListener('mouseleave', function() {
+        this.style.boxShadow = '';
     });
 });
 
@@ -269,3 +276,79 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.loading').forEach(el => {
     observer.observe(el);
 });
+
+// Add dynamic background particles
+function createParticles() {
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'particles-container';
+    particlesContainer.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    `;
+    document.body.appendChild(particlesContainer);
+    
+    for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 6 + 2}px;
+            height: ${Math.random() * 6 + 2}px;
+            background: rgba(16, 185, 129, ${Math.random() * 0.5 + 0.2});
+            border-radius: 50%;
+            top: ${Math.random() * 100}%;
+            left: ${Math.random() * 100}%;
+        `;
+        particlesContainer.appendChild(particle);
+        
+        gsap.to(particle, {
+            y: -window.innerHeight,
+            duration: Math.random() * 10 + 5,
+            repeat: -1,
+            ease: 'none',
+            delay: Math.random() * 5
+        });
+        
+        gsap.to(particle, {
+            x: (Math.random() - 0.5) * 200,
+            duration: Math.random() * 8 + 4,
+            repeat: -1,
+            yoyo: true,
+            ease: 'power2.inOut'
+        });
+    }
+}
+
+// Enhanced hover effects for skill items
+document.querySelectorAll('.skill-item').forEach(skill => {
+    skill.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('i');
+        gsap.to(icon, {
+            scale: 1.3,
+            rotation: 360,
+            duration: 0.5,
+            ease: 'power2.out'
+        });
+        
+        this.style.boxShadow = '0 10px 30px rgba(16, 185, 129, 0.4)';
+    });
+    
+    skill.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('i');
+        gsap.to(icon, {
+            scale: 1,
+            rotation: 0,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+        
+        this.style.boxShadow = '';
+    });
+});
+
+// Initialize particles
+createParticles();
