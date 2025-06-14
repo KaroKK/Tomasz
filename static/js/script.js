@@ -148,13 +148,10 @@ function setupNavigation() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                gsap.to(window, {
-                    duration: 1.5,
-                    scrollTo: {
-                        y: targetSection,
-                        offsetY: 80
-                    },
-                    ease: 'power3.inOut'
+                const offsetTop = targetSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
                 });
             }
         });
@@ -163,14 +160,14 @@ function setupNavigation() {
     const ctaButton = document.querySelector('.cta-button');
     if (ctaButton) {
         ctaButton.addEventListener('click', function() {
-            gsap.to(window, {
-                duration: 1.5,
-                scrollTo: {
-                    y: '#portfolio',
-                    offsetY: 80
-                },
-                ease: 'power3.inOut'
-            });
+            const portfolioSection = document.querySelector('#portfolio');
+            if (portfolioSection) {
+                const offsetTop = portfolioSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         });
     }
 }
@@ -228,11 +225,11 @@ window.addEventListener('scroll', function() {
     if (timelineOverlay) {
         const progress = Math.min(scrolled / (document.body.scrollHeight - window.innerHeight), 1);
         timelineOverlay.style.background = `linear-gradient(90deg, 
-            #3b82f6 0%, 
-            #8b5cf6 ${progress * 25}%, 
-            #06b6d4 ${progress * 50}%, 
-            #8b5cf6 ${progress * 75}%, 
-            #3b82f6 100%)`;
+            #eab308 0%, 
+            #22c55e ${progress * 25}%, 
+            #fbbf24 ${progress * 50}%, 
+            #22c55e ${progress * 75}%, 
+            #eab308 100%)`;
     }
 });
 
@@ -262,8 +259,8 @@ document.querySelectorAll('.social-link').forEach(link => {
             ease: 'power2.out'
         });
         
-        // Add green glow effect
-        this.style.boxShadow = '0 0 20px rgba(16, 185, 129, 0.6)';
+        // Add yellow glow effect
+        this.style.boxShadow = '0 0 20px rgba(234, 179, 8, 0.6)';
     });
     
     link.addEventListener('mouseleave', function() {
@@ -288,52 +285,6 @@ document.querySelectorAll('.loading').forEach(el => {
     observer.observe(el);
 });
 
-// Add dynamic background particles
-function createParticles() {
-    const particlesContainer = document.createElement('div');
-    particlesContainer.className = 'particles-container';
-    particlesContainer.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: -1;
-    `;
-    document.body.appendChild(particlesContainer);
-    
-    for (let i = 0; i < 15; i++) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
-            position: absolute;
-            width: ${Math.random() * 6 + 2}px;
-            height: ${Math.random() * 6 + 2}px;
-            background: rgba(16, 185, 129, ${Math.random() * 0.5 + 0.2});
-            border-radius: 50%;
-            top: ${Math.random() * 100}%;
-            left: ${Math.random() * 100}%;
-        `;
-        particlesContainer.appendChild(particle);
-        
-        gsap.to(particle, {
-            y: -window.innerHeight,
-            duration: Math.random() * 10 + 5,
-            repeat: -1,
-            ease: 'none',
-            delay: Math.random() * 5
-        });
-        
-        gsap.to(particle, {
-            x: (Math.random() - 0.5) * 200,
-            duration: Math.random() * 8 + 4,
-            repeat: -1,
-            yoyo: true,
-            ease: 'power2.inOut'
-        });
-    }
-}
-
 // Enhanced hover effects for skill items
 document.querySelectorAll('.skill-item').forEach(skill => {
     skill.addEventListener('mouseenter', function() {
@@ -345,7 +296,7 @@ document.querySelectorAll('.skill-item').forEach(skill => {
             ease: 'power2.out'
         });
         
-        this.style.boxShadow = '0 10px 30px rgba(16, 185, 129, 0.4)';
+        this.style.boxShadow = '0 10px 30px rgba(234, 179, 8, 0.4)';
     });
     
     skill.addEventListener('mouseleave', function() {
@@ -360,6 +311,3 @@ document.querySelectorAll('.skill-item').forEach(skill => {
         this.style.boxShadow = '';
     });
 });
-
-// Initialize particles
-createParticles();
