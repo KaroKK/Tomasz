@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     setupNavigation();
     setupMobileMenu();
     setupScrollEffects();
+    setupProjectCardHover();
+    setupSocialLinkHover();
+    setupSkillItemHover();
+    setupIntersectionObserver();
 });
 
 function initAnimations() {
@@ -36,13 +40,12 @@ function initAnimations() {
     }, '-=0.4');
 
     gsap.to('.adobe-element', {
-        y: -30,
+        y: -40,
         scale: 1.1,
-        duration: 6,
+        duration: 4,
         repeat: -1,
         yoyo: true,
         ease: 'power2.inOut',
-        stagger: 2
     });
 }
 
@@ -175,6 +178,7 @@ function setupNavigation() {
 function setupMobileMenu() {
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
+    if (!menuBtn || !mobileMenu) return;
     const menuLinks = mobileMenu.querySelectorAll('a');
     
     let isMenuOpen = false;
@@ -231,83 +235,134 @@ window.addEventListener('scroll', function() {
             #22c55e ${progress * 75}%, 
             #eab308 100%)`;
     }
-});
 
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        gsap.to(this, {
-            scale: 1.05,
-            duration: 0.3,
-            ease: 'power2.out'
-        });
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        gsap.to(this, {
-            scale: 1,
-            duration: 0.3,
-            ease: 'power2.out'
-        });
-    });
-});
-
-document.querySelectorAll('.social-link').forEach(link => {
-    link.addEventListener('mouseenter', function() {
-        gsap.to(this, {
-            rotation: 360,
-            duration: 0.6,
-            ease: 'power2.out'
-        });
-        
-        // Add yellow glow effect
-        this.style.boxShadow = '0 0 20px rgba(234, 179, 8, 0.6)';
-    });
-    
-    link.addEventListener('mouseleave', function() {
-        this.style.boxShadow = '';
-    });
-});
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('loaded');
+    const menu = document.querySelector('.menu');
+    if (menu) {
+        if (window.scrollY > 200) {
+            menu.classList.add('visible', 'opacity-100');
+            menu.classList.remove('opacity-0');
+        } else {
+            menu.classList.remove('visible', 'opacity-100');
+            menu.classList.add('opacity-0');
         }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.loading').forEach(el => {
-    observer.observe(el);
+    }
 });
 
-// Enhanced hover effects for skill items
-document.querySelectorAll('.skill-item').forEach(skill => {
-    skill.addEventListener('mouseenter', function() {
-        const icon = this.querySelector('i');
-        gsap.to(icon, {
-            scale: 1.3,
-            rotation: 360,
-            duration: 0.5,
-            ease: 'power2.out'
+function setupProjectCardHover() {
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            gsap.to(this, {
+                scale: 1.05,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            const playIcon = this.querySelector('.fa-play-circle');
+            if (playIcon) {
+                gsap.to(playIcon, {
+                    scale: 1.2,
+                    color: "#e53935",
+                    filter: "drop-shadow(0 0 16px #e53935cc)",
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
         });
-        
-        this.style.boxShadow = '0 10px 30px rgba(234, 179, 8, 0.4)';
+        card.addEventListener('mouseleave', function() {
+            gsap.to(this, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            const playIcon = this.querySelector('.fa-play-circle');
+            if (playIcon) {
+                gsap.to(playIcon, {
+                    scale: 1,
+                    color: "#e53935",
+                    filter: "none",
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
+        });
     });
-    
-    skill.addEventListener('mouseleave', function() {
-        const icon = this.querySelector('i');
-        gsap.to(icon, {
+}
+
+function setupSocialLinkHover() {
+    document.querySelectorAll('.social-link').forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            gsap.to(this, {
+                rotation: 360,
+                duration: 0.6,
+                ease: 'power2.out'
+            });
+            this.style.boxShadow = '0 0 20px rgba(234, 193, 8, 0.6)';
+        });
+        link.addEventListener('mouseleave', function() {
+            gsap.to(this, {
+                rotation: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            this.style.boxShadow = '';
+        });
+    });
+}
+
+function setupSkillItemHover() {
+    document.querySelectorAll('.skill-item').forEach(skill => {
+        skill.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            gsap.to(icon, {
+                scale: 1.3,
+                rotation: 360,
+                duration: 0.5,
+                ease: 'power2.out'
+            });
+            this.style.boxShadow = '0 10px 30px rgba(234, 179, 8, 0.4)';
+        });
+        skill.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            gsap.to(icon, {
+                scale: 1,
+                rotation: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+            this.style.boxShadow = '';
+        });
+    });
+}
+
+function setupIntersectionObserver() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.loading').forEach(el => {
+        observer.observe(el);
+    });
+
+    gsap.fromTo(
+        ".cinematic-question",
+        { scale: 0.85, opacity: 0 },
+        {
             scale: 1,
-            rotation: 0,
-            duration: 0.3,
-            ease: 'power2.out'
-        });
-        
-        this.style.boxShadow = '';
-    });
-});
+            opacity: 1,
+            duration: 1.4,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".cinematic-question",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        }
+    );
+}
