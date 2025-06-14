@@ -35,14 +35,14 @@ function initAnimations() {
         ease: 'power3.out'
     }, '-=0.4');
 
-    gsap.to('.floating-element', {
+    gsap.to('.adobe-element', {
         y: -30,
-        rotation: 360,
-        duration: 4,
+        scale: 1.1,
+        duration: 6,
         repeat: -1,
         yoyo: true,
         ease: 'power2.inOut',
-        stagger: 1
+        stagger: 2
     });
 }
 
@@ -220,8 +220,19 @@ window.addEventListener('scroll', function() {
     const parallax = document.querySelector('.floating-elements');
     
     if (parallax) {
-        const speed = scrolled * 0.2;
+        const speed = scrolled * 0.1;
         parallax.style.transform = `translateY(${speed}px)`;
+    }
+
+    const timelineOverlay = document.querySelector('.timeline-overlay');
+    if (timelineOverlay) {
+        const progress = Math.min(scrolled / (document.body.scrollHeight - window.innerHeight), 1);
+        timelineOverlay.style.background = `linear-gradient(90deg, 
+            #3b82f6 0%, 
+            #8b5cf6 ${progress * 25}%, 
+            #06b6d4 ${progress * 50}%, 
+            #8b5cf6 ${progress * 75}%, 
+            #3b82f6 100%)`;
     }
 });
 

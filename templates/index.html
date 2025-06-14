@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 min-h-screen text-white overflow-x-hidden">
+<body class="bg-gradient-to-br from-black via-gray-900 to-green-900 min-h-screen text-white overflow-x-hidden">
     
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 nav-blur">
@@ -18,10 +18,10 @@
             <div class="flex justify-between items-center">
                 <div class="text-2xl font-bold logo-text">MW</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link hover:text-blue-400 transition-colors duration-300">Home</a>
-                    <a href="#portfolio" class="nav-link hover:text-blue-400 transition-colors duration-300">Portfolio</a>
-                    <a href="#about" class="nav-link hover:text-blue-400 transition-colors duration-300">Über mich</a>
-                    <a href="#contact" class="nav-link hover:text-blue-400 transition-colors duration-300">Kontakt</a>
+                    <a href="#home" class="nav-link hover:text-yellow-400 transition-colors duration-300">Home</a>
+                    <a href="#portfolio" class="nav-link hover:text-yellow-400 transition-colors duration-300">Portfolio</a>
+                    <a href="#about" class="nav-link hover:text-yellow-400 transition-colors duration-300">Über mich</a>
+                    <a href="#contact" class="nav-link hover:text-yellow-400 transition-colors duration-300">Kontakt</a>
                 </div>
                 <div class="md:hidden">
                     <button class="mobile-menu-btn text-2xl">
@@ -35,10 +35,10 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
         <div class="glass-panel h-full w-64 ml-auto p-8 pt-20">
-            <a href="#home" class="block py-4 text-xl hover:text-blue-400 transition-colors">Home</a>
-            <a href="#portfolio" class="block py-4 text-xl hover:text-blue-400 transition-colors">Portfolio</a>
-            <a href="#about" class="block py-4 text-xl hover:text-blue-400 transition-colors">Über mich</a>
-            <a href="#contact" class="block py-4 text-xl hover:text-blue-400 transition-colors">Kontakt</a>
+            <a href="#home" class="block py-4 text-xl hover:text-yellow-400 transition-colors">Home</a>
+            <a href="#portfolio" class="block py-4 text-xl hover:text-yellow-400 transition-colors">Portfolio</a>
+            <a href="#about" class="block py-4 text-xl hover:text-yellow-400 transition-colors">Über mich</a>
+            <a href="#contact" class="block py-4 text-xl hover:text-yellow-400 transition-colors">Kontakt</a>
         </div>
     </div>
 
@@ -61,22 +61,22 @@
                         Erschaffe visuelle Geschichten, die berühren und inspirieren
                     </p>
                 </div>
-                <button class="cta-button bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+                <button class="cta-button bg-gradient-to-r from-yellow-500 to-green-500 px-8 py-4 rounded-lg text-lg font-semibold hover:scale-105 transition-transform duration-300 relative overflow-hidden">
                     Meine Arbeiten entdecken
                 </button>
             </div>
         </div>
         
-        <!-- Adobe-style floating elements -->
+        <!-- Film equipment floating elements -->
         <div class="floating-elements absolute inset-0 pointer-events-none">
             <div class="adobe-element premiere absolute top-1/4 left-1/4">
-                <i class="fab fa-adobe text-4xl text-blue-400"></i>
+                <i class="fas fa-video text-4xl text-yellow-400"></i>
             </div>
             <div class="adobe-element after-effects absolute top-3/4 right-1/4">
-                <i class="fas fa-film text-3xl text-purple-400"></i>
+                <i class="fas fa-film text-3xl text-green-400"></i>
             </div>
             <div class="adobe-element timeline-icon absolute top-1/2 right-1/3">
-                <i class="fas fa-sliders-h text-2xl text-cyan-400"></i>
+                <i class="fas fa-sliders-h text-2xl text-yellow-300"></i>
             </div>
         </div>
     </section>
@@ -89,22 +89,22 @@
             <div class="grid md:grid-cols-2 gap-8">
                 {% for project in projects %}
                 <div class="project-card glass-panel p-6 rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer">
-                    <div class="project-image h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
-                        <div class="video-overlay absolute inset-0 bg-black/30"></div>
-                        <i class="fas fa-play-circle text-6xl text-white/70 relative z-10"></i>
+                    <div class="project-image h-48 bg-gradient-to-br from-yellow-500/20 to-green-500/20 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+                        <div class="video-overlay absolute inset-0 bg-black/40"></div>
+                        <i class="fas fa-play-circle text-6xl text-yellow-400/90 relative z-10"></i>
                         <div class="timeline-scrubber absolute bottom-2 left-2 right-2 h-1 bg-white/20 rounded">
-                            <div class="progress-bar h-full bg-blue-400 w-1/3 rounded"></div>
+                            <div class="progress-bar h-full bg-yellow-400 w-1/3 rounded"></div>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-2xl font-bold">{{ project.title }}</h3>
-                            <span class="text-sm text-blue-400 bg-blue-400/20 px-3 py-1 rounded">{{ project.year }}</span>
+                            <span class="text-sm text-yellow-400 bg-yellow-400/20 px-3 py-1 rounded">{{ project.year }}</span>
                         </div>
                         <p class="text-gray-300 mb-4">{{ project.description }}</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-purple-400 font-semibold">{{ project.category }}</span>
-                            <button class="text-blue-400 hover:text-white transition-colors">
+                            <span class="text-green-400 font-semibold">{{ project.category }}</span>
+                            <button class="text-yellow-400 hover:text-white transition-colors">
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
@@ -120,8 +120,8 @@
         <div class="container mx-auto px-6">
             <h2 class="text-5xl font-bold text-center mb-16 section-title">Behind the Scenes</h2>
             <div class="relative">
-                <img src="{{ url_for('static', filename='images/camera.jpg') }}" alt="Kamera Setup" class="w-full h-96 object-cover rounded-2xl filter brightness-90 contrast-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl"></div>
+                <img src="{{ url_for('static', filename='images/camera.jpg') }}" alt="Kamera Setup" class="w-full h-96 object-cover rounded-2xl filter brightness-60 contrast-125 saturate-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-yellow-900/10 to-green-900/10 rounded-2xl"></div>
                 <div class="absolute bottom-8 left-8 right-8">
                     <h3 class="text-3xl font-bold mb-4 text-white">Professionelle Ausrüstung</h3>
                     <p class="text-lg text-gray-200">Modernste Kameratechnik für cineastische Qualität</p>
@@ -141,14 +141,15 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="about-image">
                         <div class="glass-panel p-8 rounded-2xl relative overflow-hidden">
-                            <img src="{{ url_for('static', filename='images/hollywood.jpg') }}" alt="Hollywood Filmset" class="w-full h-80 object-cover rounded-lg filter brightness-75 contrast-110">
+                            <img src="{{ url_for('static', filename='images/hollywood.jpg') }}" alt="Hollywood Filmset" class="w-full h-80 object-cover rounded-lg filter brightness-50 contrast-125 sepia-50">
                             <div class="film-border absolute inset-0 pointer-events-none"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/20 via-transparent to-green-500/20 rounded-lg"></div>
                         </div>
                     </div>
                     
                     <div class="about-content">
                         <div class="glass-panel p-8 rounded-2xl">
-                            <h3 class="text-3xl font-bold mb-6 text-blue-400">Meine Vision</h3>
+                            <h3 class="text-3xl font-bold mb-6 text-yellow-400">Meine Vision</h3>
                             <p class="text-lg text-gray-300 mb-6 leading-relaxed">
                                 Als unabhängiger Filmemacher und Editor verwandle ich Ideen in bewegende visuelle Erlebnisse. 
                                 Meine Leidenschaft liegt darin, authentische Geschichten zu erzählen, die das Publikum 
@@ -160,20 +161,20 @@
                             </p>
                             
                             <div class="skills-grid grid grid-cols-2 gap-4">
-                                <div class="skill-item text-center p-4 bg-white/5 rounded-lg adobe-premiere">
-                                    <i class="fas fa-cut text-2xl text-blue-400 mb-2"></i>
+                                <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-premiere">
+                                    <i class="fas fa-cut text-2xl text-yellow-400 mb-2"></i>
                                     <p class="font-semibold">Premiere Pro</p>
                                 </div>
-                                <div class="skill-item text-center p-4 bg-white/5 rounded-lg adobe-after-effects">
-                                    <i class="fas fa-magic text-2xl text-purple-400 mb-2"></i>
+                                <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-after-effects">
+                                    <i class="fas fa-magic text-2xl text-green-400 mb-2"></i>
                                     <p class="font-semibold">After Effects</p>
                                 </div>
-                                <div class="skill-item text-center p-4 bg-white/5 rounded-lg adobe-davinci">
-                                    <i class="fas fa-adjust text-2xl text-orange-400 mb-2"></i>
+                                <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-davinci">
+                                    <i class="fas fa-adjust text-2xl text-yellow-300 mb-2"></i>
                                     <p class="font-semibold">DaVinci Resolve</p>
                                 </div>
-                                <div class="skill-item text-center p-4 bg-white/5 rounded-lg adobe-audition">
-                                    <i class="fas fa-volume-up text-2xl text-cyan-400 mb-2"></i>
+                                <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-audition">
+                                    <i class="fas fa-volume-up text-2xl text-green-300 mb-2"></i>
                                     <p class="font-semibold">Pro Tools</p>
                                 </div>
                             </div>
@@ -188,8 +189,8 @@
     <section class="py-20 relative">
         <div class="container mx-auto px-6">
             <div class="relative">
-                <img src="{{ url_for('static', filename='images/studio.jpg') }}" alt="Studio Setup" class="w-full h-96 object-cover rounded-2xl filter brightness-80">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70 rounded-2xl"></div>
+                <img src="{{ url_for('static', filename='images/studio.jpg') }}" alt="Studio Setup" class="w-full h-96 object-cover rounded-2xl filter brightness-50 contrast-125 saturate-50">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-yellow-900/20 to-black/80 rounded-2xl"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                     <div class="text-center">
                         <h3 class="text-4xl font-bold mb-4 text-white">Mein Studio</h3>
@@ -198,9 +199,9 @@
                 </div>
                 <div class="timeline-markers absolute bottom-4 left-1/2 transform -translate-x-1/2">
                     <div class="flex space-x-2">
-                        <div class="w-3 h-3 bg-blue-400 rounded-full"></div>
-                        <div class="w-3 h-3 bg-purple-400 rounded-full"></div>
-                        <div class="w-3 h-3 bg-cyan-400 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-300 rounded-full"></div>
                     </div>
                 </div>
             </div>
@@ -214,31 +215,31 @@
             
             <div class="max-w-2xl mx-auto">
                 <div class="glass-panel p-8 rounded-2xl text-center">
-                    <h3 class="text-3xl font-bold mb-6 text-blue-400">Lass uns zusammenarbeiten</h3>
+                    <h3 class="text-3xl font-bold mb-6 text-yellow-400">Lass uns zusammenarbeiten</h3>
                     <p class="text-lg text-gray-300 mb-8">
                         Hast du ein spannendes Projekt im Kopf? Ich freue mich darauf, 
                         deine Vision zum Leben zu erwecken.
                     </p>
                     
                     <div class="contact-links flex justify-center space-x-8 mb-8">
-                        <a href="mailto:max@webfilms.de" class="contact-link flex items-center space-x-2 text-blue-400 hover:text-white transition-colors">
+                        <a href="mailto:max@webfilms.de" class="contact-link flex items-center space-x-2 text-yellow-400 hover:text-white transition-colors">
                             <i class="fas fa-envelope text-xl"></i>
                             <span>max@webfilms.de</span>
                         </a>
-                        <a href="tel:+491234567890" class="contact-link flex items-center space-x-2 text-purple-400 hover:text-white transition-colors">
+                        <a href="tel:+491234567890" class="contact-link flex items-center space-x-2 text-green-400 hover:text-white transition-colors">
                             <i class="fas fa-phone text-xl"></i>
                             <span>+49 123 456 7890</span>
                         </a>
                     </div>
                     
                     <div class="social-links flex justify-center space-x-6">
-                        <a href="#" class="social-link w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500/20 transition-colors">
+                        <a href="#" class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-yellow-500/20 transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-link w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-purple-500/20 transition-colors">
+                        <a href="#" class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-green-500/20 transition-colors">
                             <i class="fab fa-vimeo-v"></i>
                         </a>
-                        <a href="#" class="social-link w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-cyan-500/20 transition-colors">
+                        <a href="#" class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-yellow-400/20 transition-colors">
                             <i class="fab fa-behance"></i>
                         </a>
                     </div>
