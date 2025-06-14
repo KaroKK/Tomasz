@@ -7,32 +7,15 @@
     max-width: 100%;
 }
 
-html, body {
-    height: 100%;
-    overflow-x: hidden;
+body {
     font-family: 'Inter', sans-serif;
     background: #111;
     color: #f5f5f5;
-}
-
-/* Usuń max-width i margin z body - kontener ma je przejąć */
-body {
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0;
-}
-
-/* Kontener wyśrodkowany i o ograniczonej max szerokości */
-.container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    overflow-x: hidden;
     padding-left: 1rem;
     padding-right: 1rem;
-    box-sizing: border-box;
 }
 
-/* Linki i przyciski */
 a, button {
     color: #f5f5f5;
     transition: color 0.2s, border 0.2s, background 0.2s;
@@ -42,7 +25,6 @@ a:hover, button:hover {
     color: #e53935;
 }
 
-/* Menu i nawigacja */
 .menu {
     transition: opacity 0.5s;
 }
@@ -50,17 +32,12 @@ a:hover, button:hover {
 .menu, .nav-blur {
     background: rgba(0,0,0,0.96);
     border-bottom: 1px solid #222;
-    padding: 1rem 0;
 }
 
 .logo-text {
     color: #fff;
     letter-spacing: 2px;
     font-weight: 800;
-    font-size: 1.8rem;
-    text-align: center;
-    display: block;
-    cursor: default;
     transition: color 0.2s;
 }
 
@@ -71,9 +48,6 @@ a:hover, button:hover {
 .nav-link {
     position: relative;
     color: #f5f5f5;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: 500;
     transition: color 0.2s;
 }
 
@@ -81,68 +55,47 @@ a:hover, button:hover {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: -2px;
     width: 0;
     height: 2px;
-    background: #e53935;
+    background: #e53935;  
     transition: width 0.3s;
-}
-
-.nav-link:hover {
-    color: #e53935;
 }
 
 .nav-link:hover::after {
     width: 100%;
 }
 
-/* Sekcje i odstępy między nimi */
-section {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-left: 0;
-    padding-right: 0;
+.glass-panel {
+    background: rgba(30,30,30,0.85);
+    border: 1px solid #222;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+    padding: 1.5rem; /* dla komfortu na mniejszych ekranach */
 }
 
-/* Nagłówki */
-.hero-title, .section-title, .hero-subtitle, .logo-text, footer {
-    text-align: center;
+.hero-title, .section-title {
+    color: #fff;
+    text-shadow: 0 0 16px #000;
+    letter-spacing: 1px;
 }
 
 .hero-title {
     font-weight: 900;
-    font-size: 3rem;
-    text-shadow: 0 0 16px #000;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-}
-
-.section-title {
-    font-weight: 700;
-    font-size: 2rem;
-    text-shadow: 0 0 12px #000;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
+    font-size: 3rem; /* domyślnie większy */
 }
 
 .hero-subtitle {
     color: #bbb;
-    margin-bottom: 1rem;
 }
 
-/* Przycisk CTA */
 .cta-button {
-    display: inline-block;
     background: #111;
     color: #fff;
     border: 2px solid #e53935;
     border-radius: 8px;
     padding: 12px 32px;
     font-weight: 700;
-    cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    text-align: center;
-    text-decoration: none;
 }
 
 .cta-button:hover {
@@ -150,7 +103,6 @@ section {
     color: #fff;
 }
 
-/* Karty projektów */
 .project-card {
     background: #181818;
     border: 1px solid #222;
@@ -158,13 +110,10 @@ section {
     transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
     will-change: transform, box-shadow;
     max-width: 100%;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
 }
 
 .project-card:hover {
-    border-color: #e53935;
+    border: 1px solid #e53935;
     box-shadow: 0 8px 32px #e5393533;
 }
 
@@ -174,53 +123,39 @@ section {
     transform: scale(1.15);
     transition: color 0.2s, filter 0.2s, transform 0.2s;
 }
-
 .fa-play-circle {
     transition: color 0.2s, filter 0.2s, transform 0.2s;
 }
 
-/* Obrazki */
-.project-image,
-img {
+.project-image {
     background: #222;
     max-width: 100%;
     height: auto;
-    display: block;
-    margin-bottom: 0.5rem;
-    border-radius: 6px;
 }
 
-/* Teksty blisko obrazków */
-.hero-subtitle,
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
+.progress-bar {
+    background: #e53935;
 }
 
-/* Elementy umiejętności */
+.timeline-scrubber {
+    background: #333;
+}
+
 .skill-item {
     background: #222;
     border: 1px solid #222;
     color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
     transition: border 0.2s, box-shadow 0.2s, transform 0.2s;
     will-change: transform, box-shadow;
 }
 
 .skill-item:hover {
-    border-color: #e53935;
+    border: 1px solid #e53935;
     box-shadow: 0 0 12px #e5393533;
 }
 
-/* Linki kontaktowe i social media */
 .contact-link, .social-link {
     color: #fff;
-    text-decoration: none;
-    margin: 0 0.5rem;
-    display: inline-block;
-    transition: color 0.2s;
 }
 
 .contact-link:hover, .social-link:hover {
@@ -230,8 +165,6 @@ p {
 .social-link {
     background: #181818;
     border: 1px solid #222;
-    padding: 0.4rem 0.7rem;
-    border-radius: 6px;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
     will-change: transform, box-shadow;
 }
@@ -242,7 +175,11 @@ p {
     box-shadow: 0 0 20px #e53935cc;
 }
 
-/* Hero box */
+.mobile-menu {
+    background: #111;
+    border-left: 2px solid #e53935;
+}
+
 .hero-box {
     background: #181818;
     border-radius: 24px;
@@ -257,7 +194,6 @@ p {
     box-sizing: border-box;
 }
 
-/* Linki w hero-box */
 .hero-box a {
     background: #111;
     color: #fff;
@@ -274,17 +210,6 @@ p {
     color: #fff;
 }
 
-/* Stopka */
-footer {
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 16px 1rem;
-    color: #888;
-    border-top: 1px solid #222;
-    background: #111;
-}
-
-/* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -295,7 +220,6 @@ footer {
     background: #e53935;
 }
 
-/* Animacje, efekty */
 .film-grain, .timeline-overlay, .film-border, .film-perforations {
     filter: grayscale(1);
 }
@@ -316,19 +240,24 @@ footer {
   100% { transform: scale(1.04) translateY(-12px);}
 }
 
+footer {
+    color: #888;
+    border-top: 1px solid #222;
+    background: #111;
+}
+
 .cinematic-question {
    text-shadow: 0 6px 28px #e5393555, 0 1px 0 #fff;
-   letter-spacing: 0.08em;
-   font-family: 'Inter', Arial, sans-serif;
-   opacity: 0;
-   animation: fadeInCine 1.5s cubic-bezier(.22,1,.36,1) 0.3s forwards;
+    letter-spacing: 0.08em;
+    font-family: 'Inter', Arial, sans-serif;
+    opacity: 0;
+    animation: fadeInCine 1.5s cubic-bezier(.22,1,.36,1) 0.3s forwards;
 }
 
 .glass-panel.cinematic-shadow {
     position: relative;
     overflow: hidden;
 }
-
 .glass-panel.cinematic-shadow::after {
     content: "";
     position: absolute;
@@ -350,6 +279,7 @@ footer {
 
 /* RESPONSYWNOŚĆ */
 
+/* Grid responsywny dla skills-grid, jeśli używasz */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -370,33 +300,22 @@ footer {
         grid-template-columns: 1fr;
     }
     .hero-box {
-        padding: 24px 16px !important;
-        margin: 20px auto !important;
-    }
-    section {
-        margin-top: 0.8rem !important;
-        margin-bottom: 0.8rem !important;
-    }
-    .nav-link {
-        margin: 0 0.5rem;
-        font-size: 1rem;
+        padding: 24px 16px;
+        margin: 20px auto;
     }
 }
 
+/* Bardziej mobilne ekrany */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.8rem !important;
+        font-size: 1.8rem;
     }
     .section-title {
-        font-size: 1.2rem !important;
+        font-size: 1.2rem;
     }
     .hero-box {
-        padding: 16px 12px !important;
-        margin: 16px auto !important;
-    }
-    section {
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
+        padding: 16px 12px;
+        margin: 16px auto;
     }
     .cta-button {
         padding: 10px 24px;
@@ -404,33 +323,10 @@ footer {
     }
     .nav-link {
         font-size: 0.9rem;
-        margin: 0 0.3rem;
     }
-   .site-footer {
-    width: 100%;
-    background: #111;
-    border-top: 1px solid #222;
-    padding: 2rem 0;
-
 }
 
-section {
-  margin-top: 1rem;   /* zmniejszone marginesy */
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+/* Zapobiega przewijaniu poziomemu */
+body, html {
+    overflow-x: hidden;
 }
-@media (max-width: 768px) {
-  /* Zmniejsz margines dolny dla sekcji "Behind the Scenes" */
-  section.py-20.relative {
-    margin-bottom: 1.5rem !important; /* zmniejszone z 5rem na 1.5rem */
-    padding-bottom: 1.5rem !important;
-  }
-
-  /* Zmniejsz margines górny dla sekcji "Meine Vision" */
-  #about {
-    margin-top: 1rem !important;
-    padding-top: 1rem !important;
-  }
-
-}}
