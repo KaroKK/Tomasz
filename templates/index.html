@@ -8,7 +8,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.ico') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     </head>
@@ -16,24 +16,15 @@
     <body class="bg-gradient-to-br from-black via-grey-1800 to-white-6400 min-h-screen text-white overflow-x-hidden">
 
         <nav
-            class="fixed top-0 w-full z-50 nav-blur border-b-3 border-red-500 opacity-0 transition-opacity duration-500 menu">
-            <div class="hidden md:flex px-7 py-4 justify-center">
-                <div class="flex justify-between items-center">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="h-20 w-auto">
-                    <div class="hidden md:flex space-x-8">
-                        <a href="#home" class="nav-link hover:text-red-400 transition-colors duration-300">Home</a>
-                        <a href="#portfolio"
-                            class="nav-link hover:text-red-400 transition-colors duration-300">Portfolio</a>
-                        <a href="#about" class="nav-link hover:text-red-400 transition-colors duration-300">Über
-                            mich</a>
-                        <a href="#contact"
-                            class="nav-link hover:text-red-400 transition-colors duration-300">Kontakt</a>
-                    </div>
-                    <div class="md:hidden">
-                        <button class="mobile-menu-btn text-2xl">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
+            class="fixed top-0 w-full z-50 nav-blur border-b-3 border-red-300 opacity-0 transition-opacity duration-500 menu">
+            <div class="container flex px-7 py-4 justify-center items-center">
+                <div class="flex items-center space-x-8">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="h-24 w-auto">
+                    <a href="#home" class="nav-link hover:text-red-400 transition-colors duration-300">Home</a>
+                    <a href="#portfolio"
+                        class="nav-link hover:text-red-400 transition-colors duration-300">Portfolio</a>
+                    <a href="#about" class="nav-link hover:text-red-400 transition-colors duration-300">Über mich</a>
+                    <a href="#contact" class="nav-link hover:text-red-400 transition-colors duration-300">Kontakt</a>
                 </div>
             </div>
         </nav>
@@ -53,24 +44,34 @@
                 <div class="film-grain"></div>
                 <div class="timeline-overlay"></div>
             </div>
-            <div class="container mx-auto px-8 text-center relative z-10">
-                <div class="hero-content">
-                    <h1 class="text-6xl md:text-8xl font-bold mb-6 hero-title mt-12">
-                        Tomitos Productions
+            <div class="container mx-auto px-4 text-center relative z-10 flex flex-col items-center justify-center">
+                <div class="hero-content w-full max-w-2xl mx-auto flex flex-col items-center text-center">
+                    <h1
+                        class="hero-title mb-4 mt-10 text-3xl sm:text-4xl md:text-6xl font-extrabold text-white drop-shadow-glow animate-hero-fade">
+                        <span
+                            class="inline-block bg-gradient-to-r from-red-500 via-white to-red-500 bg-clip-text text-transparent">
+                            Tomitos Productions
+                        </span>
                     </h1>
-                    <p class="text-xl md:text-2xl mb-8 hero-subtitle text-gray-300">
+                    <p
+                        class="hero-subtitle text-base sm:text-lg md:text-2xl mb-6 text-gray-200 font-medium animate-hero-fade delay-200">
                         Video Editing & Visual Storytelling
                     </p>
-                    <div class="glass-panel cinematic-shadow inline-block p-6 mb-8 mt-12">
-                        <p class="text-lg">
-                            Ich erschaffe visuelle Geschichten, die berühren und inspirieren
-                        </p>
+                    <div class="netflix-stripes-wrapper my-12">
+                        <div class="netflix-stripe stripe1"></div>
+                        <div class="netflix-stripe stripe2"></div>
+                        <div class="netflix-stripe stripe3"></div>
+                        <div class="netflix-stripe stripe4"></div>
+                        <div class="netflix-stripe stripe5"></div>
+                    </div>
+                    <div
+                        class="hero-subtitle opacity-0 pointer-events-none transition-opacity duration-700 sm:text-lg md:text-2xl font-medium text-grey-300 tracking-wide text-center leading-relaxed max-w-xl w-full absolute top-20 left-1/2 -translate-x-1/2 flex items-center justify-center h-full">
+                        Visuelle Geschichten, die berühren und inspirieren
                     </div>
                 </div>
             </div>
-
-            <!-- floating elements -->
-            <div class="floating-elements absolute inset-0 pointer-events-none">
+            </div>
+            <div class="floating-elements absolute inset-0 pointer-events-none z-10">
                 <div
                     class="adobe-element premiere absolute top-[24%] left-[8%] blur-[1.3px] rotate-[-12deg] opacity-80">
                     <i class="fas fa-video text-5xl text-red-400"></i>
@@ -91,9 +92,10 @@
 
         <section id="portfolio" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-5xl font-bold text-center mb-16 section-title">Portfolio</h2>
-
+                <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Portfolio
+                </h2>
                 <div class="grid md:grid-cols-2 gap-8">
+
                     {% for project in projects %}
                     <div
                         class="project-card glass-panel p-6 rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer">
@@ -127,29 +129,33 @@
 
         <section class="py-20 relative">
             <div class="container mx-auto px-6">
-                <h2 class="text-5xl font-bold text-center mb-16 section-title">Behind the Scenes</h2>
-                <div class="relative w-full h-[750px] overflow-hidden rounded-2xl">
-                    <img src="{{ url_for('static', filename='images/camera.jpg') }}" alt="Kamera Setup"
-                        class="animated-camera absolute top-0 left-0 w-full h-auto object-cover filter brightness-75 contrast-110 saturate-90">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-2xl"></div>
-
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-grey-900/10 to-white-900/10 rounded-2xl">
-                    </div>
-                    <div class="absolute bottom-8 left-8 right-8">
-                        <h3 class="text-3xl font-bold mb-4 text-white"></h3>
-                        <p class="text-lg text-gray-200"></p>
-                    </div>
-                    <div class="film-perforations absolute left-0 top-0 h-full w-8"></div>
-                    <div class="film-perforations absolute right-0 top-0 h-full w-8"></div>
+                <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Behind the Scenes</h2>
+                <img src="{{ url_for('static', filename='images/camera.jpg') }}" alt="Kamera Setup"
+                    class="animated-camera w-full h-[400px] md:h-[600px] lg:h-[750px] object-cover">
+                <div class="pointer-events-none absolute inset-0" style="
+            background:
+                radial-gradient(ellipse at center, transparent 60%, #000 100%),
+                linear-gradient(to bottom, #000 0%, transparent 15%, transparent 85%, #000 100%),
+                linear-gradient(to right, #000 0%, transparent 10%, transparent 90%, #000 100%);
+         ">
                 </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-grey-900/10 to-white-900/10 rounded-2xl">
+            </div>
+            <div class="absolute bottom-8 left-8 right-8">
+                <h3 class="text-3xl font-bold mb-4 text-white"></h3>
+                <p class="text-lg text-gray-200"></p>
+            </div>
+            <div class="film-perforations absolute left-0 top-0 h-full w-8"></div>
+            <div class="film-perforations absolute right-0 top-0 h-full w-8"></div>
+            </div>
             </div>
         </section>
 
         <section id="about" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-5xl font-bold text-center mb-16 section-title">Meine Vision</h2>
+                    <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Meine Vision</h2>
 
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="about-image">
@@ -179,9 +185,9 @@
 
         <section class="py-20">
             <div class="container mx-auto px-6">
-                <div class="max-w-3xl mx-auto">
+                <div class="max-w-5xl mx-auto">
 
-                    <div class="glass-panel p-8 rounded-2xl">
+                    <div class="p-8 rounded-2xl">
                         <p class="text-lg text-gray-300 mb-6 leading-relaxed text-center">
                             Ich bin Tomasz, 24, Videoeditor aus Berlin.
 
@@ -201,32 +207,35 @@
                         </p>
 
                         <p
-                            class="cinematic-question text-xl md:text-4xl font-extrabold text-center text-red-500 tracking-wide my-12 shadow-lg transition-transform duration-300 hover:scale-120">
+                            class="cinematic-question text-xl md:text-4xl font-extrabold text-center text-red-500 tracking-wide my-4 transition-transform duration-300 hover:scale-110">
                             Was willst du erzählen?
                         </p>
-                        <p class="text-lg text-gray-300 mb-8 leading-relaxed text-center">
+
+
+                        <p class="text-lg text-gray-300 mt-12 mb-4 leading-relaxed text-center">
 
                             Ich suche jetzt Anschluss in einem professionellen Umfeld. Menschen, mit denen man gemeinsam
-                            an echten Projekten wachsen kann. Ich bin bereit - für mehr, für Team.
+                            an echten Projekten wachsen kann.
                         </p>
+                        <div class="max-w-4xl mx-auto">
 
-
-                        <div class="skills-grid grid grid-cols-2 gap-4">
-                            <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-premiere">
-                                <i class="fas fa-cut text-2xl text-red-400 mb-2"></i>
-                                <p class="font-semibold">Premiere Pro</p>
-                            </div>
-                            <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-after-effects">
-                                <i class="fas fa-magic text-2xl text-white-400 mb-2"></i>
-                                <p class="font-semibold">After Effects</p>
-                            </div>
-                            <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-davinci">
-                                <i class="fas fa-adjust text-2xl text-white-300 mb-2"></i>
-                                <p class="font-semibold">DaVinci Resolve</p>
-                            </div>
-                            <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-audition">
-                                <i class="fas fa-volume-up text-2xl text-red-300 mb-2"></i>
-                                <p class="font-semibold">Pro Tools</p>
+                            <div class="skills-grid grid grid-cols-2 gap-4">
+                                <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-premiere">
+                                    <i class="fas fa-cut text-2xl text-red-400 mb-2"></i>
+                                    <p class="font-semibold">Premiere Pro</p>
+                                </div>
+                                <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-after-effects">
+                                    <i class="fas fa-magic text-2xl text-white-400 mb-2"></i>
+                                    <p class="font-semibold">After Effects</p>
+                                </div>
+                                <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-davinci">
+                                    <i class="fas fa-adjust text-2xl text-white-300 mb-2"></i>
+                                    <p class="font-semibold">DaVinci Resolve</p>
+                                </div>
+                                <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-audition">
+                                    <i class="fas fa-volume-up text-2xl text-red-300 mb-2"></i>
+                                    <p class="font-semibold">Pro Tools</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -240,40 +249,39 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-5xl font-bold text-center mb-16 section-title">Kontakt</h2>
 
-                <div class="max-w-2xl mx-auto">
-                    <div class="glass-panel p-8 rounded-2xl text-center">
-                        <p class="text-lg text-gray-300 mb-8">
-                            Hast du ein spannendes Projekt im Kopf? Ich freue mich darauf,
-                            deine Vision zum Leben zu erwecken.
-                        </p>
+                <div class="max-w-2xl mx-auto text-center">
+                    <p class="text-lg text-gray-300 mb-8">
+                        Hast du ein spannendes Projekt im Kopf? Ich freue mich darauf,
+                        deine Vision zum Leben zu erwecken.
+                    </p>
 
-                        <div class="contact-links flex justify-center space-x-8 mb-8">
-                            <a href="mailto:max@webfilms.de"
-                                class="contact-link flex items-center space-x-2 text-red-400 hover:text-white transition-colors">
-                                <i class="fas fa-envelope text-xl"></i>
-                                <span>tomaszkuster01@gmail.com</span>
-                            </a>
-                            <a href="tel:+491234567890"
-                                class="contact-link flex items-center space-x-2 text-red-400 hover:text-white transition-colors">
-                                <i class="fas fa-phone text-xl"></i>
-                                <span>+49 176 433 741 14</span>
-                            </a>
-                        </div>
+                    <div
+                        class="contact-links flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8">
+                        <a href="mailto:max@webfilms.de"
+                            class="contact-link flex items-center space-x-2 text-red-400 hover:text-white transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                            <span>tomaszkuster01@gmail.com</span>
+                        </a>
+                        <a href="tel:+491234567890"
+                            class="contact-link flex items-center space-x-2 text-red-400 hover:text-white transition-colors">
+                            <i class="fas fa-phone text-xl"></i>
+                            <span>+49 176 433 741 14</span>
+                        </a>
+                    </div>
 
-                        <div class="social-links flex justify-center space-x-6">
-                            <a href="#"
-                                class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#"
-                                class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
-                                <i class="fab fa-vimeo-v"></i>
-                            </a>
-                            <a href="#"
-                                class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-400/20 transition-colors">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
+                    <div class="social-links flex justify-center space-x-6">
+                        <a href="#"
+                            class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
+                            <i class="fab fa-vimeo-v"></i>
+                        </a>
+                        <a href="#"
+                            class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-400/20 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
             </div>

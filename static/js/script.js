@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSkillItemHover();
     setupIntersectionObserver();
 });
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.querySelector('.erschaffe-text').classList.add('visible');
+    }, 1800);  
+});
 
 function initAnimations() {
     const tl = gsap.timeline();
@@ -17,7 +22,7 @@ function initAnimations() {
     tl.to('.hero-title', {
         opacity: 1,
         y: 0,
-        duration: 1.2,
+        duration: 1.8,
         ease: 'power3.out'
     })
     .to('.hero-subtitle', {
