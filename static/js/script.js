@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-        document.querySelector('.erschaffe-text').classList.add('visible');
+        const erschaffe = document.querySelector('.erschaffe-text');
+        if (erschaffe) erschaffe.classList.add('visible');
     }, 1800);  
 });
 
@@ -221,6 +222,7 @@ function setupMobileMenu() {
     });
 }
 
+// OBSŁUGA POKAZYWANIA MENU PO SCROLLU
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const parallax = document.querySelector('.floating-elements');
@@ -242,6 +244,7 @@ window.addEventListener('scroll', function() {
     }
 
     const menu = document.querySelector('.menu');
+    const menuMobile = document.querySelector('.menu-mobile');
     if (menu) {
         if (window.scrollY > 200) {
             menu.classList.add('visible', 'opacity-100');
@@ -249,6 +252,15 @@ window.addEventListener('scroll', function() {
         } else {
             menu.classList.remove('visible', 'opacity-100');
             menu.classList.add('opacity-0');
+        }
+    }
+    if (menuMobile) {
+        if (window.scrollY > 200) {
+            menuMobile.classList.add('visible', 'opacity-100');
+            menuMobile.classList.remove('opacity-0');
+        } else {
+            menuMobile.classList.remove('visible', 'opacity-100');
+            menuMobile.classList.add('opacity-0');
         }
     }
 });

@@ -10,7 +10,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
         <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.ico') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
 
     <body class="bg-gradient-to-br from-black via-grey-1800 to-white-6400 min-h-screen text-white overflow-x-hidden">
@@ -18,7 +18,7 @@
         <nav
             class="fixed top-0 w-full z-50 nav-blur border-b-3 border-red-300 opacity-0 transition-opacity duration-500 menu">
             <div class="container flex px-7 py-4 justify-center items-center">
-                <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-8 hidden md:flex">
                     <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="h-24 w-auto">
                     <a href="#home" class="nav-link hover:text-red-400 transition-colors duration-300">Home</a>
                     <a href="#portfolio"
@@ -30,24 +30,12 @@
         </nav>
 
         <div
-            class="mobile-menu fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
-            <div class="glass-panel h-full w-64 ml-auto p-8 pt-20">
-                <a href="#home" class="nav-link flex items-center justify-center mb-6">
-                    <i class="fas fa-home text-xl"></i>
-                    <span class="hidden md:inline ml-2">Home</span>
-                </a>
-                <a href="#portfolio" class="nav-link flex items-center justify-center mb-6">
-                    <i class="fas fa-film text-xl"></i>
-                    <span class="hidden md:inline ml-2">Portfolio</span>
-                </a>
-                <a href="#about" class="nav-link flex items-center justify-center mb-6">
-                    <i class="fas fa-user text-xl"></i>
-                    <span class="hidden md:inline ml-2">Über mich</span>
-                </a>
-                <a href="#contact" class="nav-link flex items-center justify-center">
-                    <i class="fas fa-envelope text-xl"></i>
-                    <span class="hidden md:inline ml-2">Kontakt</span>
-                </a>
+            class="fixed top-0 w-full z-50 nav-blur border-b-3 border-red-300 opacity-0 transition-opacity duration-500 md:hidden flex justify-center items-center py-4 menu-mobile">
+            <div class="flex flex-row space-x-8">
+                <a href="#home"><i class="fa-solid fa-house text-2xl text-white"></i></a>
+                <a href="#portfolio"><i class="fa-solid fa-film text-2xl text-white"></i></a>
+                <a href="#about"><i class="fa-solid fa-user text-2xl text-white"></i></a>
+                <a href="#contact"><i class="fa-solid fa-envelope text-2xl text-white"></i></a>
             </div>
         </div>
 
