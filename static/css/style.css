@@ -328,6 +328,9 @@ footer {
         font-size: 1.7rem;
         margin-top: 2rem;
     }
+     .nav-link {
+        font-size: 0.6rem;
+    }
     .section-title {
         font-size: 1.2rem;
     }
@@ -366,7 +369,7 @@ footer {
         font-size: 0.9rem;
     }
     .nav-link {
-        font-size: 0.9rem;
+        font-size: 0.6rem;
     }
     .glass-panel {
         padding: 0.7rem;
