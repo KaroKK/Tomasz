@@ -14,36 +14,36 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         const erschaffe = document.querySelector('.erschaffe-text');
         if (erschaffe) erschaffe.classList.add('visible');
-    }, 1800);  
+    }, 1800);
 });
 
 function initAnimations() {
     const tl = gsap.timeline();
-    
+
     tl.to('.hero-title', {
         opacity: 1,
         y: 0,
         duration: 1.8,
         ease: 'power3.out'
     })
-    .to('.hero-subtitle', {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out'
-    }, '-=0.8')
-    .to('.glass-panel', {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out'
-    }, '-=0.6')
-    .to('.cta-button', {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out'
-    }, '-=0.4');
+        .to('.hero-subtitle', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out'
+        }, '-=0.8')
+        .to('.glass-panel', {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out'
+        }, '-=0.6')
+        .to('.cta-button', {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out'
+        }, '-=0.4');
 
     gsap.to('.adobe-element', {
         y: -40,
@@ -73,6 +73,24 @@ function setupScrollEffects() {
             }
         });
     });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo('.tabs', 
+  {opacity: 0, y: 30}, 
+  {
+    opacity: 1, y: 0, 
+    duration: 1, 
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.tabs-container',
+      start: 'top 90%',
+      toggleActions: 'play none none reverse',
+     
+    }
+  }
+);
+
 
     gsap.utils.toArray('.project-card').forEach((card, index) => {
         gsap.fromTo(card, {
@@ -148,14 +166,14 @@ function setupScrollEffects() {
 
 function setupNavigation() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 const offsetTop = targetSection.offsetTop - 80;
                 window.scrollTo({
@@ -186,12 +204,12 @@ function setupMobileMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     if (!menuBtn || !mobileMenu) return;
     const menuLinks = mobileMenu.querySelectorAll('a');
-    
+
     let isMenuOpen = false;
-    
+
     menuBtn.addEventListener('click', function() {
         isMenuOpen = !isMenuOpen;
-        
+
         if (isMenuOpen) {
             gsap.to(mobileMenu, {
                 x: 0,
@@ -208,7 +226,7 @@ function setupMobileMenu() {
             menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
-    
+
     menuLinks.forEach(link => {
         link.addEventListener('click', function() {
             isMenuOpen = false;
@@ -222,11 +240,10 @@ function setupMobileMenu() {
     });
 }
 
-// OBSŁUGA POKAZYWANIA MENU PO SCROLLU
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const parallax = document.querySelector('.floating-elements');
-    
+
     if (parallax) {
         const speed = scrolled * 0.1;
         parallax.style.transform = `translateY(${speed}px)`;
@@ -383,3 +400,161 @@ function setupIntersectionObserver() {
         }
     );
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const projects = document.querySelectorAll('#projects-container > .project-card');
+
+  function setActiveTab(activeBtn) {
+    tabButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    activeBtn.classList.add('active');
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category.toLowerCase();
+      setActiveTab(btn);
+
+      projects.forEach(project => {
+        const projCat = project.dataset.category.toLowerCase();
+        if (category === 'all' || projCat === category) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  if (tabButtons.length > 0) {
+    tabButtons[0].click();
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('youtube-modal');
+    const iframe = document.getElementById('youtube-iframe');
+    const closeBtn = document.getElementById('youtube-modal-close');
+
+    document.querySelectorAll('.project-image[data-youtube-id]').forEach(el => {
+        el.addEventListener('click', () => {
+            const videoId = el.dataset.youtubeId;
+            if (!videoId) return;
+
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        iframe.src = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeBtn.click();
+        }
+    });
+});
+
+const overlay = document.getElementById('overlay');
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    overlay.style.opacity = '1';
+    card.classList.add('highlighted');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    overlay.style.opacity = '0';
+    card.classList.remove('highlighted');
+  });
+});
+
+const homeSection = document.getElementById('portfolio_frames');
+const latrakaEffect = document.querySelector('.latraka-effect');
+
+homeSection.addEventListener('mousemove', e => {
+  const rect = homeSection.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const xPercent = (x / rect.width) * 100 + '%';
+  const yPercent = (y / rect.height) * 100 + '%';
+
+  latrakaEffect.style.setProperty('--mouse-x', xPercent);
+  latrakaEffect.style.setProperty('--mouse-y', yPercent);
+});
+
+
+function getAverageBrightness(img, callback) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  img.crossOrigin = 'Anonymous';  
+
+  img.onload = () => {
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    ctx.drawImage(img, 0, 0);
+
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let total = 0;
+    const length = imageData.data.length / 4;  
+    for (let i = 0; i < imageData.data.length; i += 4) {
+      const r = imageData.data[i];
+      const g = imageData.data[i + 1];
+      const b = imageData.data[i + 2];
+      total += (r + g + b) / 3;  
+    }
+
+    const avgBrightness = total / length;
+    callback(avgBrightness);
+  };
+
+  img.onerror = () => {
+    callback(null);
+  };
+
+  if (img.complete && img.naturalWidth !== 0) {
+    img.onload();
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.project-image img').forEach(img => {
+    getAverageBrightness(img, (brightness) => {
+      const overlay = img.parentElement.querySelector('.video-overlay');
+      if (!overlay) return;
+
+      if (brightness !== null) {
+        if (brightness > 180) {
+          overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        } else {
+          overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+        }
+      }
+    });
+  });
+});
+document.querySelectorAll('.skill-item.puzzle').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    const text = item.getAttribute('data-text');
+    const display = document.getElementById('skill-text-display');
+    if (display) {
+      display.textContent = text;
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    const display = document.getElementById('skill-text-display');
+    if (display) {
+      display.textContent = '';
+    }
+  });
+});
+

@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -10,26 +9,30 @@ def index():
         {
             'title': 'Urban',
             'description': 'Kurzfilm',
-            'category': 'Kurzfilm',
-            'year': '2024'
+            'category': 'short film',
+            'year': '2024',
+            'youtubeId': 'abc123XYZ'
         },
         {
             'title': 'Nachtlichter',
             'description': 'Musikvideo mit',
-            'category': 'Musikvideo',
-            'year': '2024'
+            'category': 'shorts',
+            'year': '2024',
+            'youtubeId': 'def456UVW'
         },
         {
             'title': 'Zwischen den Zeilen',
             'description': 'Dokumentarfilm',
-            'category': 'Dokumentarfilm',
-            'year': '2023'
+            'category': 'interviews',
+            'year': '2023',
+            'youtubeId': 'ghi789RST'
         },
         {
             'title': 'Reflektionen',
             'description': 'Videoinstallation',
-            'category': 'Installation',
-            'year': '2023'
+            'category': 'short film',
+            'year': '2023',
+            'youtubeId': 'jkl012MNO'
         }
     ]
 

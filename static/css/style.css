@@ -122,12 +122,12 @@ a:hover, button:hover {
 
 .project-card:hover {
     border: 1px solid #e53935;
-    box-shadow: 0 8px 32px #e5393533;
+    box-shadow: 0 8px 32px #6e6d6d33;
 }
 
 .project-card:hover .fa-play-circle {
     color: #fff;
-    filter: drop-shadow(0 0 16px #e53935cc);
+    filter: drop-shadow(0 0 16px #535252cc);
     transform: scale(1.15);
     transition: color 0.2s, filter 0.2s, transform 0.2s;
 }
@@ -149,17 +149,37 @@ a:hover, button:hover {
     background: #333;
 }
 
-.skill-item {
-    background: #222;
-    border: 1px solid #222;
-    color: #fff;
-    transition: border 0.2s, box-shadow 0.2s, transform 0.2s;
-    will-change: transform, box-shadow;
+.skill-item.puzzle {
+  background: #22222293;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 4rem;
+  width: 4rem;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  background: #222;
+  color: #f5f5f5;
+  border-radius: 1rem;
+  transition: width 0.4s ease, background 0.3s ease;
 }
 
-.skill-item:hover {
-    border: 1px solid #e53935;
-    box-shadow: 0 0 12px #e5393533;
+.skill-item.puzzle:hover {
+  width: 18rem;
+  background: #807e7e93;
+  color: #111010;
+}
+
+.skill-item.puzzle i {
+  transition: transform 0.3s ease;
+}
+
+.skill-item.puzzle:hover i {
+  transform: scale(1.3);
 }
 
 .contact-link, .social-link {
@@ -167,7 +187,7 @@ a:hover, button:hover {
 }
 
 .contact-link:hover, .social-link:hover {
-    color: #e53935;
+    color: #8d8c8c;
 }
 
 .social-link {
@@ -180,7 +200,7 @@ a:hover, button:hover {
 .social-link:hover {
     background: #e53935;
     color: #fff;
-    box-shadow: 0 0 20px #e53935cc;
+    box-shadow: 0 0 20px #b6aeaecc;
 }
 
 .mobile-menu {
@@ -214,7 +234,7 @@ a:hover, button:hover {
 }
 
 .hero-box a:hover {
-    background: #e53935;
+    background: #756b6b;
     color: #fff;
 }
 
@@ -239,7 +259,7 @@ a:hover, button:hover {
 
 @keyframes cameraPulse {
   0% { filter: grayscale(1) brightness(0.85) contrast(120%); }
-  50% { filter: grayscale(1) brightness(1) contrast(140%) drop-shadow(0 0 16px #e5393555); }
+  50% { filter: grayscale(1) brightness(1) contrast(140%) drop-shadow(0 0 16px #f6dfdf55); }
   100% { filter: grayscale(1) brightness(0.85) contrast(120%); }
 }
 
@@ -299,7 +319,6 @@ footer {
         opacity: 1;
     }
 }
-
 
 .skills-grid {
     display: grid;
@@ -427,19 +446,17 @@ footer {
     animation-delay: 0.4s;
 }
 .drop-shadow-glow {
-    filter: drop-shadow(0 0 16px #e53935cc) drop-shadow(0 2px 8px #000a);
+    filter: drop-shadow(0 0 16px #dfa8a7cc) drop-shadow(0 2px 8px #000a);
 }
 .hero-title span {
     letter-spacing: 0.06em;
-    text-shadow: 0 2px 24px #e5393555, 0 1px 0 #fff;
+    text-shadow: 0 2px 24px #e0767455, 0 1px 0 #fff;
 }
 @media (max-width: 600px) {
     .hero-title { font-size: 2rem; }
     .hero-title span { font-size: 2rem; }
     .hero-content { padding-top: 2.5rem; }
 }
-
-
 
 .netflix-stripes-wrapper {
     position: relative;
@@ -480,15 +497,18 @@ footer {
     100% { opacity: 0; filter: blur(8px); transform: translateX(-50%) scaleX(1.1);}
 }
 
-.erschaffe-text {
-    opacity: 0;
-    transition: opacity 0.8s cubic-bezier(.77,0,.18,1);
-    z-index: 10;
+.erschaffe-text.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .erschaffe-text.visible {
     opacity: 2.3;
     pointer-events: auto;
+}
+#portfolio_frames {
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {
@@ -517,7 +537,7 @@ footer {
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 1.5rem !important; 
+    gap: 1.5rem !important;
     padding: 1.5rem 0.5rem !important;
     width: 100vw !important;
     max-width: 100vw !important;
@@ -529,4 +549,102 @@ footer {
 
 body, html {
     overflow-x: hidden;
+}
+
+.tabs button.tab-btn {
+    border-bottom-width: 2px;
+}
+
+.tabs button.tab-btn.border-red-400 {
+    border-color: #e53935;
+    color: #e53935;
+}
+
+#youtube-modal {
+    transition: opacity 0.3s ease;
+}
+
+#youtube-modal:not(.opacity-0) {
+    pointer-events: auto;
+}
+
+#projects-container {
+  position: relative;
+}
+
+#overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(25, 25, 25, 0.7);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.3s ease;
+  z-index: 1000;
+  mix-blend-mode: multiply;
+}
+
+.highlighted {
+  position: relative;
+  z-index: 1010;
+  filter: brightness(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlighted .video-overlay {
+  background: rgba(245, 249, 230, 0.497);
+  transition: background 0.3s ease;
+}
+
+.latraka-effect {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background:
+    radial-gradient(
+      circle 330px at var(--mouse-x, 80%) var(--mouse-y, 20%),
+      transparent 70%,
+      rgba(0,0,0,0.85) 100%
+    ),
+    linear-gradient(to bottom, #000 0%, transparent 15%, transparent 85%, #000 100%),
+    linear-gradient(to right, #000 0%, transparent 10%, transparent 90%, #000 100%);
+  transition: background-position 0.1s;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden !important;
+}
+
+.tab-btn {
+  background: rgba(255, 83, 83, 0.1);
+  border-radius: 12px;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 83, 83, 0.3);
+  color: #ff5353;
+  box-shadow: 0 4px 12px rgba(255, 83, 83, 0.4);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #ff5353, #e53935);
+  color: white;
+  box-shadow: 0 6px 20px rgba(229, 57, 53, 0.6);
+  transform: scale(1.05);
 }

@@ -2,15 +2,15 @@
 <html lang="de">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Tomasz Kuster - Filmeditor Portfolio - Tomitos Productions - Berlin</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.ico') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.ico') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     </head>
 
     <body class="bg-gradient-to-br from-black via-grey-1800 to-white-6400 min-h-screen text-white overflow-x-hidden">
@@ -19,7 +19,7 @@
             class="fixed top-0 w-full z-50 nav-blur border-b-3 border-red-300 opacity-0 transition-opacity duration-500 menu">
             <div class="container flex px-7 py-4 justify-center items-center">
                 <div class="flex items-center space-x-8 hidden md:flex">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="h-24 w-auto">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="h-24 w-auto" />
                     <a href="#home" class="nav-link hover:text-red-400 transition-colors duration-300">Home</a>
                     <a href="#portfolio"
                         class="nav-link hover:text-red-400 transition-colors duration-300">Portfolio</a>
@@ -43,19 +43,17 @@
             <div class="absolute inset-0">
                 <div class="film-grain"></div>
                 <div class="timeline-overlay"></div>
+
             </div>
             <div class="container mx-auto px-4 text-center relative z-10 flex flex-col items-center justify-center">
                 <div class="hero-content w-full max-w-2xl mx-auto flex flex-col items-center text-center">
-                    <h1
-                        class="hero-title mb-4 mt-10 text-3xl sm:text-4xl md:text-6xl font-extrabold text-white drop-shadow-glow animate-hero-fade">
-                        <span
-                            class="inline-block bg-gradient-to-r from-red-500 via-white to-red-500 bg-clip-text text-transparent">
-                            Tomitos Productions
-                        </span>
+                    <h1 class="hero-title mb-4 mt-10 text-center drop-shadow-glow animate-hero-fade">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Tomitos Productions Logo"
+                            class="h-36 mx-auto" />
                     </h1>
                     <p
                         class="hero-subtitle text-base sm:text-lg md:text-2xl mb-6 text-gray-200 font-medium animate-hero-fade delay-200">
-                        Videoediting & Visual Storytelling
+                        Tomitos Productions
                     </p>
                     <div class="netflix-stripes-wrapper my-12">
                         <div class="netflix-stripe stripe1"></div>
@@ -66,69 +64,157 @@
                     </div>
                     <div
                         class="hero-subtitle opacity-0 pointer-events-none transition-opacity duration-700 sm:text-lg md:text-2xl font-medium text-grey-300 tracking-wide text-center leading-relaxed max-w-xl w-full absolute top-20 left-1/2 -translate-x-1/2 flex items-center justify-center h-full">
-                        Visuelle Geschichten, die berühren und inspirieren
+                        Interwievs, shorts, social media und mehr erwarten dich hier
                     </div>
                 </div>
             </div>
+
+            <div class="adobe-element premiere absolute top-[10%] left-[5%] rotate-[-15deg] opacity-70">
+                <i class="fas fa-video text-5xl text-red-400"></i>
             </div>
-            <div class="floating-elements absolute inset-0 pointer-events-none z-10">
-                <div class="adobe-element premiere absolute top-[24%] left-[8%] rotate-[-12deg] opacity-80">
-                    <i class="fas fa-video text-5xl text-red-400"></i>
-                </div>
-                <div class="adobe-element after-effects absolute top-[65%] left-[18%] rotate-[8deg] opacity-70">
-                    <i class="fas fa-film text-4xl text-white-400"></i>
-                </div>
-                <div class="adobe-element timeline-icon absolute top-[30%] right-[12%] rotate-[6deg] opacity-80">
-                    <i class="fas fa-sliders-h text-3xl text-red-300"></i>
-                </div>
-                <div class="adobe-element absolute top-[80%] right-[20%] rotate-[-8deg] opacity-60">
-                    <i class="fas fa-magic text-4xl text-white-400"></i>
-                </div>
+            <div class="adobe-element after-effects absolute top-[75%] left-[5%] rotate-[12deg] opacity-65">
+                <i class="fas fa-film text-4xl text-white-400"></i>
             </div>
+            <div class="adobe-element timeline-icon absolute top-[40%] left-[3%] rotate-[20deg] opacity-80">
+                <i class="fas fa-sliders-h text-3xl text-red-300"></i>
+            </div>
+            <div class="adobe-element absolute top-[60%] left-[10%] rotate-[-12deg] opacity-70">
+                <i class="fas fa-magic text-4xl text-white-400"></i>
+            </div>
+
+            <div class="adobe-element absolute top-[15%] right-[5%] rotate-[10deg] opacity-75">
+                <i class="fas fa-clapperboard text-4xl text-red-500"></i>
+            </div>
+            <div class="adobe-element absolute top-[45%] right-[5%] rotate-[-10deg] opacity-70">
+                <i class="fas fa-camera text-5xl text-white"></i>
+            </div>
+            <div class="adobe-element absolute top-[70%] right-[8%] rotate-[5deg] opacity-65">
+                <i class="fas fa-microphone text-4xl text-red-400"></i>
+            </div>
+            <div class="adobe-element absolute top-[85%] right-[10%] rotate-[-8deg] opacity-70">
+                <i class="fas fa-headphones text-4xl text-white-300"></i>
+            </div>
+
+            <div class="adobe-element absolute top-[25%] left-[15%] rotate-[10deg] opacity-70">
+                <i class="fas fa-video text-4xl text-red-400"></i>
+            </div>
+            <div class="adobe-element absolute top-[55%] left-[18%] rotate-[-20deg] opacity-60">
+                <i class="fas fa-edit text-4xl text-white"></i>
+            </div>
+            <div class="adobe-element absolute top-[80%] left-[20%] rotate-[15deg] opacity-70">
+                <i class="fas fa-file-video text-4xl text-red-500"></i>
+            </div>
+            <div class="adobe-element absolute top-[35%] right-[18%] rotate-[-5deg] opacity-65">
+                <i class="fas fa-tape text-4xl text-white-400"></i>
+            </div>
+
+            <div class="adobe-element absolute top-[10%] left-[25%] rotate-[10deg] opacity-70">
+                <i class="fas fa-broadcast-tower text-4xl text-red-400"></i>
+            </div>
+            <div class="adobe-element absolute top-[50%] left-[30%] rotate-[-15deg] opacity-60">
+                <i class="fas fa-photo-video text-4xl text-white"></i>
+            </div>
+
+            <div class="adobe-element absolute top-[20%] right-[25%] rotate-[8deg] opacity-70">
+                <i class="fas fa-film text-4xl text-red-600"></i>
+            </div>
+            <div class="adobe-element absolute top-[40%] right-[30%] rotate-[-12deg] opacity-65">
+                <i class="fas fa-cogs text-4xl text-white-400"></i>
+            </div>
+            <div class="adobe-element absolute top-[65%] right-[32%] rotate-[5deg] opacity-75">
+                <i class="fas fa-stopwatch text-4xl text-red-500"></i>
+            </div>
+            <div class="adobe-element absolute top-[80%] right-[35%] rotate-[-8deg] opacity-70">
+                <i class="fas fa-cloud-upload-alt text-4xl text-white"></i>
+            </div>
+            <div class="adobe-element absolute top-[35%] left-[35%] rotate-[15deg] opacity-60">
+                <i class="fas fa-sliders-h text-4xl text-red-400"></i>
+            </div>
+
+            <div class="adobe-element absolute top-[45%] right-[40%] rotate-[-10deg] opacity-65">
+                <i class="fas fa-play text-4xl text-white-300"></i>
+            </div>
+            <div class="adobe-element absolute top-[70%] right-[45%] rotate-[12deg] opacity-75">
+                <i class="fas fa-stop-circle text-4xl text-red-500"></i>
+            </div>
+            <div class="adobe-element absolute top-[85%] right-[48%] rotate-[-6deg] opacity-70">
+                <i class="fas fa-sync-alt text-4xl text-white"></i>
+            </div>
+            <div class="adobe-element absolute top-[10%] left-[40%] rotate-[10deg] opacity-60">
+                <i class="fas fa-volume-mute text-4xl text-red-600"></i>
+            </div>
+
         </section>
+
 
         <section id="portfolio" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Portfolio
-                </h2>
-                <div class="grid md:grid-cols-2 gap-8">
 
-                    {% for project in projects %}
-                    <div
-                        class="project-card glass-panel p-6 rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer">
-                        <div
-                            class="project-image h-48 bg-gradient-to-br from-grey-500/20 to-red-500/20 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
-                            <div class="video-overlay absolute inset-0 bg-black/40"></div>
-                            <i class="fas fa-play-circle text-6xl text-red-400/90 relative z-10"></i>
-                            <div class="timeline-scrubber absolute bottom-2 left-2 right-2 h-1 bg-white/20 rounded">
-                                <div class="progress-bar h-full bg-red-400 w-1/3 rounded"></div>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-2xl font-bold">{{ project.title }}</h3>
-                                <span class="text-sm text-red-400 bg-white-400/20 px-3 py-1 rounded">{{ project.year
-                                    }}</span>
-                            </div>
-                            <p class="text-gray-300 mb-4">{{ project.description }}</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-white-400 font-semibold">{{ project.category }}</span>
-                                <button class="text-white-400 hover:text-white transition-colors">
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
+            <div class="container mx-auto px-6">
+                <h2 class="text-5xl font-bold text-center mb-8 section-title drop-shadow-lg">Portfolio</h2>
+
+                <div class="tabs-container max-w-4xl mx-auto mb-12 overflow-x-auto no-scrollbar">
+                    <div class="tabs flex relative space-x-8 whitespace-nowrap select-none">
+                        <button class="tab-btn active" data-category="all">Alle</button>
+                        <button class="tab-btn" data-category="shorts">Shorts</button>
+                        <button class="tab-btn" data-category="short film">Short Films</button>
+                        <button class="tab-btn" data-category="interviews">Interviews</button>
                     </div>
-                    {% endfor %}
+
                 </div>
+                <section id="portfolio_frames" class="py-20">
+
+                    <div class="latraka-effect"></div>
+
+
+                    <div id="projects-container" class="grid md:grid-cols-2 gap-8">
+                        {% for project in projects %}
+                        <div class="project-card glass-panel p-6 rounded-2xl cursor-pointer"
+                            data-category="{{ project.category | lower }}">
+                            <div class="project-image h-36 rounded-lg mb-6 relative overflow-hidden cursor-pointer"
+                                data-youtube-id="{{ project.youtubeId }}">
+                                <img src="https://img.youtube.com/vi/{{ project.youtubeId }}/hqdefault.jpg"
+                                    alt="{{ project.title }}" class="w-full h-full object-cover" />
+                                <div
+                                    class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center">
+                                    <i class="fas fa-play-circle text-5xl text-red-400 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+
+                            <div class="project-info">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-2xl font-bold">{{ project.title }}</h3>
+                                    <span class="text-sm text-red-400 bg-white-400/20 px-3 py-1 rounded">{{ project.year
+                                        }}</span>
+                                </div>
+                                <p class="text-gray-300 mb-4">{{ project.description }}</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-white-400 font-semibold">{{ project.category }}</span>
+                                    <button class="text-white-400 hover:text-white transition-colors">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
             </div>
         </section>
 
-        <section class="py-20 relative">
+        </section>
+
+        <div id="youtube-modal"
+            class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+            <div class="relative w-full max-w-4xl aspect-[16/9] bg-black rounded-xl shadow-2xl overflow-hidden">
+                <button id="youtube-modal-close"
+                    class="absolute top-4 right-4 text-white text-3xl z-50 hover:text-red-500 transition-colors">&times;</button>
+                <iframe id="youtube-iframe" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <section class="">
             <div class="container mx-auto px-6">
-                <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Behind the Scenes</h2>
                 <img src="{{ url_for('static', filename='images/camera.jpg') }}" alt="Kamera Setup"
-                    class="animated-camera w-full h-[400px] md:h-[600px] lg:h-[750px] object-cover">
+                    class="animated-camera w-full h-[300px] md:h-[600px] lg:h-[960px] object-cover" />
                 <div class="pointer-events-none absolute inset-0" style="
             background:
                 radial-gradient(ellipse at center, transparent 60%, #000 100%),
@@ -139,41 +225,26 @@
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-grey-900/10 to-white-900/10 rounded-2xl">
             </div>
-            <div class="absolute bottom-8 left-8 right-8">
-                <h3 class="text-3xl font-bold mb-4 text-white"></h3>
-                <p class="text-lg text-gray-200"></p>
-            </div>
-            <div class="film-perforations absolute left-0 top-0 h-full w-8"></div>
-            <div class="film-perforations absolute right-0 top-0 h-full w-8"></div>
-            </div>
-            </div>
+
         </section>
 
         <section id="about" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Meine Vision</h2>
+                    <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Behind the Scenes</h2>
 
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="about-image">
-                            <div class="glass-panel p-8 rounded-2xl relative overflow-hidden">
-                                <img src="{{ url_for('static', filename='images/hollywood.jpg') }}"
-                                    class="w-full h-80 object-cover rounded-lg filter brightness-51 contrast-115 sepia-50">
-                                <div class="film-border absolute inset-0 pointer-events-none"></div>
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-br from-white-500/20 via-transparent to-red-500/20 rounded-lg">
-                                </div>
-                            </div>
+                            <img src="{{ url_for('static', filename='images/hollywood.jpg') }}"
+                                class="w-auto h-80 filter brightness-40 contrast-[1.1] sepia-70" />
+                            <div class="absolute inset-0 bg-black bg-opacity-40 pointer-events-none"></div>
+
                         </div>
                         <div class="about-image">
-                            <div class="glass-panel p-8 rounded-2xl relative overflow-hidden">
-                                <img src="{{ url_for('static', filename='images/studio.jpg') }}"
-                                    class="w-full h-80 object-cover rounded-lg filter brightness-51 contrast-115 sepia-50">
-                                <div class="film-border absolute inset-0 pointer-events-none"></div>
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-br from-white-500/20 via-transparent to-red-500/20 rounded-lg">
-                                </div>
-                            </div>
+                            <img src="{{ url_for('static', filename='images/studio.jpg') }}"
+                                class="w-full h-80 filter brightness-40 contrast-[1.1] sepia-70" />
+                            <div class="absolute inset-0 bg-black bg-opacity-40 pointer-events-none"></div>
+
                         </div>
                     </div>
                 </div>
@@ -208,36 +279,37 @@
 
                     <p class="text-lg text-gray-300 mt-12 mb-4 leading-relaxed text-center">
 
-                        Ich suche jetzt Anschluss in einem professionellen Umfeld. Menschen, mit denen man gemeinsam
-                        an echten Projekten wachsen kann.
+
                     </p>
                     <div class="max-w-4xl mx-auto">
 
-                        <div class="skills-grid grid grid-cols-2 gap-4">
-                            <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-premiere">
-                                <i class="fas fa-cut text-2xl text-red-400 mb-2"></i>
-                                <p class="font-semibold">Premiere Pro</p>
+                        <div class="skills-container max-w-4xl mx-auto grid grid-cols-3 gap-4">
+                            <div class="skill-item puzzle"
+                                data-text="Montage von Filmen in Premiere Pro mit verschiedenen Kameras">
+                                <i class="fas fa-cut text-4xl text-black-400"></i>
                             </div>
-                            <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-after-effects">
-                                <i class="fas fa-magic text-2xl text-white-400 mb-2"></i>
-                                <p class="font-semibold">After Effects</p>
+                            <div class="skill-item puzzle" data-text="Untertitel in beliebiger Sprache">
+                                <i class="fas fa-closed-captioning text-4xl text-black-400"></i>
                             </div>
-                            <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-davinci">
-                                <i class="fas fa-adjust text-2xl text-white-300 mb-2"></i>
-                                <p class="font-semibold">DaVinci Resolve</p>
+                            <div class="skill-item puzzle" data-text="Grundlegende Farbkorrektur">
+                                <i class="fas fa-adjust text-4xl text-black-400"></i>
                             </div>
-                            <div class="skill-item text-center p-4 bg-black/20 rounded-lg adobe-audition">
-                                <i class="fas fa-volume-up text-2xl text-red-300 mb-2"></i>
-                                <p class="font-semibold">Pro Tools</p>
+                            <div class="skill-item puzzle" data-text="Grundlegende Audioreinigung">
+                                <i class="fas fa-wind text-4xl text-black-400"></i>
+                            </div>
+                            <div class="skill-item puzzle" data-text="Spezialeffekte Audio/Mischung">
+                                <i class="fas fa-magic text-4xl text-black-400"></i>
+                            </div>
+                            <div class="skill-item puzzle" data-text="Soundeffekte und Musik von Artlist">
+                                <i class="fas fa-music text-4xl text-black-400"></i>
                             </div>
                         </div>
+                        <div id="skill-text-display" class="text-white-400 text-lg mt-6 text-center min-h-[3rem]"></div>
+
                     </div>
                 </div>
             </div>
-            </div>
         </section>
-
-
 
         <section id="contact" class="py-20">
             <div class="container mx-auto px-6">
@@ -288,6 +360,8 @@
         </footer>
 
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <div id="overlay"></div>
+
     </body>
 
 </html>
