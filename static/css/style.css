@@ -149,37 +149,83 @@ a:hover, button:hover {
     background: #333;
 }
 
-.skill-item.puzzle {
-  background: #22222293;
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-btn {
+  background: linear-gradient(145deg, #2e2e2e, #232323);
+  border-radius: 1.2rem;
+  border: none;
+  box-shadow:
+    3px 3px 8px #1c1c1c,
+    -3px -3px 8px #3a3a3a;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 4rem;
-  width: 4rem;
-  overflow: hidden;
+  gap: 1.5rem;
+  padding: 1.25rem 2rem;
   cursor: pointer;
-  padding: 0;
-  margin: 0 auto;
-  position: relative;
-  background: #222;
   color: #f5f5f5;
-  border-radius: 1rem;
-  transition: width 0.4s ease, background 0.3s ease;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  user-select: none;
+  transition: box-shadow 0.25s ease, transform 0.15s ease;
 }
 
-.skill-item.puzzle:hover {
-  width: 18rem;
-  background: #807e7e93;
-  color: #111010;
-}
-
-.skill-item.puzzle i {
+.skill-btn i {
+  font-size: 1.2rem;
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
-.skill-item.puzzle:hover i {
-  transform: scale(1.3);
+.skill-text {
+  font-size: 0.85rem;
+  font-style: normal;
+  flex-grow: 1;
+  line-height: 1.3;
+}
+
+.skill-btn:hover,
+.skill-btn:focus {
+  box-shadow:
+    inset 3px 3px 6px #1c1c1c,
+    inset -3px -3px 6px #3a3a3a;
+  transform: translateY(-2px);
+}
+
+.skill-btn:active {
+  box-shadow:
+    inset 1px 1px 3px #3a3a3a,
+    inset -1px -1px 3px #1c1c1c;
+  transform: translateY(1px);
+}
+
+.skill-btn:hover i,
+.skill-btn:focus i {
+  transform: scale(1.2) rotate(12deg);
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .skill-btn {
+    flex-direction: column;
+    padding: 1.5rem;
+    font-size: 1rem;
+    gap: 1rem;
+  }
+  .skill-btn i {
+    font-size: 1.0rem;
+  }
+  .skill-text {
+    text-align: center;
+  }
 }
 
 .contact-link, .social-link {
@@ -275,14 +321,17 @@ footer {
 }
 
 .cinematic-question {
-    text-shadow: 0 6px 28px #e5393555, 0 1px 0 #fff;
-    letter-spacing: 0.08em;
-    font-family: 'Inter', Arial, sans-serif;
-    opacity: 0;
-    animation: fadeInCine 1.5s cubic-bezier(.22,1,.36,1) 0.3s forwards;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 500;          
+    font-family: 'Inter', sans-serif;   
+    letter-spacing: 0.04em;    
+    color: #f87171;            
+    transition: transform 0.3s ease;
 }
+
+.cinematic-question:hover {
+    transform: scale(1.05);
+}
+
 
 .glass-panel.cinematic-shadow {
     position: relative;
