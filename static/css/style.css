@@ -25,7 +25,7 @@ a, button {
 }
 
 a:hover, button:hover {
-    color: #e53935;
+    color: #fbb9b8;
 }
 
 .menu {
@@ -136,13 +136,21 @@ a:hover, button:hover {
 }
 
 .project-image {
-    .project-image img, .about-image img, .animated-camera {
+    .about-image img, .animated-camera {
   width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
   max-width: 100%;
 }
+.project-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; 
+  display: block;
+  max-width: 100%;
+}
+
 
 
 
@@ -219,25 +227,77 @@ a:hover, button:hover {
 }
 
 @media (max-width: 600px) {
-  .skills-container {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding: 0 1.2rem;
+  .tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;   
+    overflow-x: hidden !important;   
+    justify-content: space-between !important;
+    padding: 0 0.5rem;               
+    gap: 0 !important;
   }
-  .skill-btn {
-    flex-direction: column;
-    padding: 1.8rem 2rem;
-    font-size: 1.05rem;
-    gap: 1.2rem;
+
+  .tab-btn {
+    flex: 1 1 0 !important;          
+    max-width: none !important;
+    width: 100% !important;
     text-align: center;
+    padding: 0.75rem 0.5rem !important;
+    font-size: 1rem;
+    border-radius: 20 !important;
+    background-color: #302f2f !important;   
+    color: #ddd !important;                 
+    border: none !important;
+    box-shadow: none !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  .skill-btn i {
-    font-size: 1.1rem;
+
+  .tab-btn.active {
+    background-color: #363232 !important;  
+    color: #fff !important;
+    box-shadow: none !important;
+    transform: none !important;
   }
-  .skill-text {
-    font-size: 0.9rem;
+
+  .tab-btn:not(.active):hover {
+    background-color: #262626 !important;
+    color: #fff !important;
+    box-shadow: none !important;
   }
 }
+
+
+
+@media (max-width: 600px) {
+  .skills-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+  .skill-btn {
+    width: 100% !important;
+    max-width: none !important;
+    flex-direction: row !important; 
+    align-items: center !important;
+    white-space: normal !important;
+    padding: 1rem 1.5rem !important;
+    min-height: auto !important;
+  }
+  .skill-btn i {
+    font-size: 1.5rem !important;
+    margin-right: 1rem !important;
+    flex-shrink: 0 !important;
+  }
+  .skill-text {
+    font-size: 1rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+}
+
+
+
+
 
 
 .contact-link, .social-link {
@@ -256,7 +316,7 @@ a:hover, button:hover {
 }
 
 .social-link:hover {
-    background: #e53935;
+    background: #eea4a2;
     color: #fff;
     box-shadow: 0 0 20px #b6aeaecc;
 }
@@ -700,7 +760,7 @@ body, html {
 .tab-btn:hover {
   background: rgba(255, 83, 83, 0.3);
   color: #ff5353;
-  box-shadow: 0 4px 12px rgba(255, 83, 83, 0.4);
+  box-shadow: 0 4px 12px rgba(36, 33, 33, 0.4);
 }
 
 .tab-btn.active {
