@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     </head>
 
-    <body class="bg-gradient-to-br from-black via-grey-1800 to-white-6400 min-h-screen text-white overflow-x-hidden">
+    <body class="bg-gradient-to-br from-black via-grey-1800 to-white-6400 min-h-screen text-white overflow-x-hidden"
+        style="display:flex; flex-direction:column; min-height:100vh;">
 
         <nav
             class="fixed top-0 w-full z-50 nav-blur border-b-3 border-red-300 opacity-0 transition-opacity duration-500 menu">
@@ -39,132 +40,55 @@
             </div>
         </div>
 
-        <section id="home" class="min-h-screen flex items-center justify-center relative">
-            <div class="absolute inset-0">
-                <div class="film-grain"></div>
-                <div class="timeline-overlay"></div>
+        <main style="flex:1 0 auto; margin-top: 80px;">
 
-            </div>
-            <div class="container mx-auto px-4 text-center relative z-10 flex flex-col items-center justify-center">
-                <div class="hero-content w-full max-w-2xl mx-auto flex flex-col items-center text-center">
-                    <h1 class="hero-title mb-4 mt-10 text-center drop-shadow-glow animate-hero-fade">
-                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Tomitos Productions Logo"
-                            class="h-36 mx-auto" />
-                    </h1>
-                    <p
-                        class="hero-subtitle text-base sm:text-lg md:text-2xl mb-6 text-gray-200 font-medium animate-hero-fade delay-200">
-                        Tomitos Productions
-                    </p>
-                    <div class="netflix-stripes-wrapper my-12">
-                        <div class="netflix-stripe stripe1"></div>
-                        <div class="netflix-stripe stripe2"></div>
-                        <div class="netflix-stripe stripe3"></div>
-                        <div class="netflix-stripe stripe4"></div>
-                        <div class="netflix-stripe stripe5"></div>
-                    </div>
-                    <div
-                        class="hero-subtitle opacity-0 pointer-events-none transition-opacity duration-700 sm:text-lg md:text-2xl font-medium text-grey-300 tracking-wide text-center leading-relaxed max-w-xl w-full absolute top-20 left-1/2 -translate-x-1/2 flex items-center justify-center h-full">
-                        Interwievs, shorts, social media und mehr erwarten dich hier
+            <section id="home" class="min-h-screen flex items-center justify-center relative">
+                <div class="absolute inset-0">
+                    <div class="film-grain"></div>
+                    <div class="timeline-overlay"></div>
+                </div>
+                <div class="container mx-auto px-4 text-center relative z-10 flex flex-col items-center justify-center">
+                    <div class="hero-content w-full max-w-2xl mx-auto flex flex-col items-center text-center">
+                        <h1 class="hero-title mb-4 mt-10 text-center drop-shadow-glow animate-hero-fade">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}"
+                                alt="Tomitos Productions Logo" class="h-36 mx-auto" />
+                        </h1>
+                        <p
+                            class="hero-subtitle text-base sm:text-lg md:text-2xl mb-6 text-gray-200 font-medium animate-hero-fade delay-200">
+                            Tomitos Productions
+                        </p>
+                        <div class="netflix-stripes-wrapper my-12">
+                            <div class="netflix-stripe stripe1"></div>
+                            <div class="netflix-stripe stripe2"></div>
+                            <div class="netflix-stripe stripe3"></div>
+                            <div class="netflix-stripe stripe4"></div>
+                            <div class="netflix-stripe stripe5"></div>
+                        </div>
+                        <div
+                            class="hero-subtitle opacity-0 pointer-events-none transition-opacity duration-700 sm:text-lg md:text-2xl font-medium text-grey-300 tracking-wide text-center leading-relaxed max-w-xl w-full absolute top-20 left-1/2 -translate-x-1/2 flex items-center justify-center h-full">
+                            Interwievs, shorts, social media und mehr erwarten dich hier
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="adobe-element premiere absolute top-[10%] left-[5%] rotate-[-15deg] opacity-70">
-                <i class="fas fa-video text-5xl text-red-400"></i>
-            </div>
-            <div class="adobe-element after-effects absolute top-[75%] left-[5%] rotate-[12deg] opacity-65">
-                <i class="fas fa-film text-4xl text-white-400"></i>
-            </div>
-            <div class="adobe-element timeline-icon absolute top-[40%] left-[3%] rotate-[20deg] opacity-80">
-                <i class="fas fa-sliders-h text-3xl text-red-300"></i>
-            </div>
-            <div class="adobe-element absolute top-[60%] left-[10%] rotate-[-12deg] opacity-70">
-                <i class="fas fa-magic text-4xl text-white-400"></i>
-            </div>
+            </section>
 
-            <div class="adobe-element absolute top-[15%] right-[5%] rotate-[10deg] opacity-75">
-                <i class="fas fa-clapperboard text-4xl text-red-500"></i>
-            </div>
-            <div class="adobe-element absolute top-[45%] right-[5%] rotate-[-10deg] opacity-70">
-                <i class="fas fa-camera text-5xl text-white"></i>
-            </div>
-            <div class="adobe-element absolute top-[70%] right-[8%] rotate-[5deg] opacity-65">
-                <i class="fas fa-microphone text-4xl text-red-400"></i>
-            </div>
-            <div class="adobe-element absolute top-[85%] right-[10%] rotate-[-8deg] opacity-70">
-                <i class="fas fa-headphones text-4xl text-white-300"></i>
-            </div>
+            <section id="portfolio" class="py-20">
 
-            <div class="adobe-element absolute top-[25%] left-[15%] rotate-[10deg] opacity-70">
-                <i class="fas fa-video text-4xl text-red-400"></i>
-            </div>
-            <div class="adobe-element absolute top-[55%] left-[18%] rotate-[-20deg] opacity-60">
-                <i class="fas fa-edit text-4xl text-white"></i>
-            </div>
-            <div class="adobe-element absolute top-[80%] left-[20%] rotate-[15deg] opacity-70">
-                <i class="fas fa-file-video text-4xl text-red-500"></i>
-            </div>
-            <div class="adobe-element absolute top-[35%] right-[18%] rotate-[-5deg] opacity-65">
-                <i class="fas fa-tape text-4xl text-white-400"></i>
-            </div>
-
-            <div class="adobe-element absolute top-[10%] left-[25%] rotate-[10deg] opacity-70">
-                <i class="fas fa-broadcast-tower text-4xl text-red-400"></i>
-            </div>
-            <div class="adobe-element absolute top-[50%] left-[30%] rotate-[-15deg] opacity-60">
-                <i class="fas fa-photo-video text-4xl text-white"></i>
-            </div>
-
-            <div class="adobe-element absolute top-[20%] right-[25%] rotate-[8deg] opacity-70">
-                <i class="fas fa-film text-4xl text-red-600"></i>
-            </div>
-            <div class="adobe-element absolute top-[40%] right-[30%] rotate-[-12deg] opacity-65">
-                <i class="fas fa-cogs text-4xl text-white-400"></i>
-            </div>
-            <div class="adobe-element absolute top-[65%] right-[32%] rotate-[5deg] opacity-75">
-                <i class="fas fa-stopwatch text-4xl text-red-500"></i>
-            </div>
-            <div class="adobe-element absolute top-[80%] right-[35%] rotate-[-8deg] opacity-70">
-                <i class="fas fa-cloud-upload-alt text-4xl text-white"></i>
-            </div>
-            <div class="adobe-element absolute top-[35%] left-[35%] rotate-[15deg] opacity-60">
-                <i class="fas fa-sliders-h text-4xl text-red-400"></i>
-            </div>
-
-            <div class="adobe-element absolute top-[45%] right-[40%] rotate-[-10deg] opacity-65">
-                <i class="fas fa-play text-4xl text-white-300"></i>
-            </div>
-            <div class="adobe-element absolute top-[70%] right-[45%] rotate-[12deg] opacity-75">
-                <i class="fas fa-stop-circle text-4xl text-red-500"></i>
-            </div>
-            <div class="adobe-element absolute top-[85%] right-[48%] rotate-[-6deg] opacity-70">
-                <i class="fas fa-sync-alt text-4xl text-white"></i>
-            </div>
-            <div class="adobe-element absolute top-[10%] left-[40%] rotate-[10deg] opacity-60">
-                <i class="fas fa-volume-mute text-4xl text-red-600"></i>
-            </div>
-
-        </section>
-
-
-        <section id="portfolio" class="py-20">
-
-            <div class="container mx-auto px-6">
-                <h2 class="text-5xl font-bold text-center mb-8 section-title drop-shadow-lg">Portfolio</h2>
-
-                <div class="tabs-container max-w-4xl mx-auto mb-12 overflow-x-auto no-scrollbar">
-                    <div class="tabs flex relative space-x-8 whitespace-nowrap select-none">
-                        <button class="tab-btn active" data-category="all">Alle</button>
+                <div class="container mx-auto px-6">
+                    <h2 class="text-5xl font-bold text-center mb-8 section-title drop-shadow-lg">Portfolio</h2>
+                    <div class="tabs flex border-b  select-none relative">
                         <button class="tab-btn" data-category="shorts">Shorts</button>
-                        <button class="tab-btn" data-category="short film">Short Films</button>
+                        <button class="tab-btn" data-category="short-film">Short Films</button>
                         <button class="tab-btn" data-category="interviews">Interviews</button>
+                        <button class="tab-btn active" data-category="all">Alle</button>
+
                     </div>
 
                 </div>
                 <section id="portfolio_frames" class="py-20">
 
                     <div class="latraka-effect"></div>
-
 
                     <div id="projects-container" class="grid md:grid-cols-2 gap-8">
                         {% for project in projects %}
@@ -183,7 +107,8 @@
                             <div class="project-info">
                                 <div class="flex justify-between items-start mb-3">
                                     <h3 class="text-2xl font-bold">{{ project.title }}</h3>
-                                    <span class="text-sm text-red-400 bg-white-400/20 px-3 py-1 rounded">{{ project.year
+                                    <span class="text-sm text-red-400 bg-white-400/20 px-3 py-1 rounded">{{
+                                        project.year
                                         }}</span>
                                 </div>
                                 <p class="text-gray-300 mb-4">{{ project.description }}</p>
@@ -196,186 +121,224 @@
                         </div>
                         {% endfor %}
                     </div>
+                </section>
+                <div class="adobe-element premiere absolute top-[10%] left-[5%] rotate-[-15deg] opacity-70">
+                    <i class="fas fa-video text-5xl text-red-400"></i>
+                </div>
+                <div class="adobe-element after-effects absolute top-[75%] left-[5%] rotate-[12deg] opacity-65">
+                    <i class="fas fa-film text-4xl text-white-400"></i>
+                </div>
+                <div class="adobe-element timeline-icon absolute top-[40%] left-[3%] rotate-[20deg] opacity-80">
+                    <i class="fas fa-sliders-h text-3xl text-red-300"></i>
+                </div>
+                <div class="adobe-element absolute top-[60%] left-[10%] rotate-[-12deg] opacity-70">
+                    <i class="fas fa-magic text-4xl text-white-400"></i>
+                </div>
+
+                <div class="adobe-element absolute top-[15%] right-[5%] rotate-[10deg] opacity-75">
+                    <i class="fas fa-clapperboard text-4xl text-red-500"></i>
+                </div>
+                <div class="adobe-element absolute top-[45%] right-[5%] rotate-[-10deg] opacity-70">
+                    <i class="fas fa-camera text-5xl text-white"></i>
+                </div>
+                <div class="adobe-element absolute top-[70%] right-[8%] rotate-[5deg] opacity-65">
+                    <i class="fas fa-microphone text-4xl text-red-400"></i>
+                </div>
+                <div class="adobe-element absolute top-[85%] right-[10%] rotate-[-8deg] opacity-70">
+                    <i class="fas fa-headphones text-4xl text-white-300"></i>
+                </div>
+
+                <div class="adobe-element absolute top-[25%] left-[15%] rotate-[10deg] opacity-70">
+                    <i class="fas fa-video text-4xl text-red-400"></i>
+                </div>
+                <div class="adobe-element absolute top-[55%] left-[18%] rotate-[-20deg] opacity-60">
+                    <i class="fas fa-edit text-4xl text-white"></i>
+                </div>
+                <div class="adobe-element absolute top-[80%] left-[20%] rotate-[15deg] opacity-70">
+                    <i class="fas fa-file-video text-4xl text-red-500"></i>
+                </div>
+                <div class="adobe-element absolute top-[35%] right-[18%] rotate-[-5deg] opacity-65">
+                    <i class="fas fa-tape text-4xl text-white-400"></i>
+                </div>
+
+                <div class="adobe-element absolute top-[10%] left-[25%] rotate-[10deg] opacity-70">
+                    <i class="fas fa-broadcast-tower text-4xl text-red-400"></i>
+                </div>
+                <div class="adobe-element absolute top-[50%] left-[30%] rotate-[-15deg] opacity-60">
+                    <i class="fas fa-photo-video text-4xl text-white"></i>
+                </div>
+
+                <div class="adobe-element absolute top-[20%] right-[25%] rotate-[8deg] opacity-70">
+                    <i class="fas fa-film text-4xl text-red-600"></i>
+                </div>
+                <div class="adobe-element absolute top-[40%] right-[30%] rotate-[-12deg] opacity-65">
+                    <i class="fas fa-cogs text-4xl text-white-400"></i>
+                </div>
+                <div class="adobe-element absolute top-[65%] right-[32%] rotate-[5deg] opacity-75">
+                    <i class="fas fa-stopwatch text-4xl text-red-500"></i>
+                </div>
+                <div class="adobe-element absolute top-[80%] right-[35%] rotate-[-8deg] opacity-70">
+                    <i class="fas fa-cloud-upload-alt text-4xl text-white"></i>
+                </div>
+                <div class="adobe-element absolute top-[35%] left-[35%] rotate-[15deg] opacity-60">
+                    <i class="fas fa-sliders-h text-4xl text-red-400"></i>
+                </div>
+
+                <div class="adobe-element absolute top-[45%] right-[40%] rotate-[-10deg] opacity-65">
+                    <i class="fas fa-play text-4xl text-white-300"></i>
+                </div>
+                <div class="adobe-element absolute top-[70%] right-[45%] rotate-[12deg] opacity-75">
+                    <i class="fas fa-stop-circle text-4xl text-red-500"></i>
+                </div>
+                <div class="adobe-element absolute top-[85%] right-[48%] rotate-[-6deg] opacity-70">
+                    <i class="fas fa-sync-alt text-4xl text-white"></i>
+                </div>
+                <div class="adobe-element absolute top-[10%] left-[40%] rotate-[10deg] opacity-60">
+                    <i class="fas fa-volume-mute text-4xl text-red-600"></i>
+                </div>
+
+
+            </section>
+
+            <div id="youtube-modal"
+                class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+                <div class="relative w-full max-w-4xl aspect-[16/9] bg-black rounded-xl shadow-2xl overflow-hidden">
+                    <button id="youtube-modal-close"
+                        class="absolute top-4 right-4 text-white text-3xl z-50 hover:text-red-500 transition-colors">&times;</button>
+                    <iframe id="youtube-iframe" width="100%" height="100%" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
             </div>
-        </section>
 
-        </section>
-
-        <div id="youtube-modal"
-            class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
-            <div class="relative w-full max-w-4xl aspect-[16/9] bg-black rounded-xl shadow-2xl overflow-hidden">
-                <button id="youtube-modal-close"
-                    class="absolute top-4 right-4 text-white text-3xl z-50 hover:text-red-500 transition-colors">&times;</button>
-                <iframe id="youtube-iframe" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <section class="">
-            <div class="container mx-auto px-6">
-                <img src="{{ url_for('static', filename='images/camera.jpg') }}" alt="Kamera Setup"
-                    class="animated-camera w-full h-[300px] md:h-[600px] lg:h-[960px] object-cover" />
-                <div class="pointer-events-none absolute inset-0" style="
+            <section class="">
+                <div class="container mx-auto px-6">
+                    <img src="{{ url_for('static', filename='images/camera.jpg') }}" alt="Kamera Setup"
+                        class="animated-camera w-full h-[300px] md:h-[600px] lg:h-[960px] object-cover" />
+                    <div class="pointer-events-none absolute inset-0" style="
             background:
                 radial-gradient(ellipse at center, transparent 60%, #000 100%),
                 linear-gradient(to bottom, #000 0%, transparent 15%, transparent 85%, #000 100%),
                 linear-gradient(to right, #000 0%, transparent 10%, transparent 90%, #000 100%);
          ">
+                    </div>
                 </div>
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-grey-900/10 to-white-900/10 rounded-2xl">
-            </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/70 via-grey-900/10 to-white-900/10 rounded-2xl">
+                </div>
 
-        </section>
+            </section>
 
-        <section id="about" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Behind the Scenes</h2>
+            <section id="about" class="py-20">
+                <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Behind the Scenes</h2>
 
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="about-image">
-                            <img src="{{ url_for('static', filename='images/hollywood.jpg') }}"
-                                class="w-auto h-80 filter brightness-40 contrast-[1.1] sepia-70" />
-                            <div class="absolute inset-0 bg-black bg-opacity-40 pointer-events-none"></div>
+                <div id="parallax-gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {% for i in range(0, 18) %}
+                    <div class="parallax-item overflow-hidden rounded-xl h-80">
+                        <img src="{{ url_for('static', filename='images/s' ~ i ~ '.jpg') }}" alt="Behind the scenes"
+                            class="w-full h-full object-cover block" />
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
 
+
+            <section class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto">
+                        <p class="text-lg text-gray-300 mb-2 leading-relaxed text-center">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        <p class="text-lg text-gray-300 mt-12 mb-4 leading-relaxed text-center">
+
+
+                        </p>
+                        <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Skills</h2>
+                        <div class="skills-grid">
+                            <button class="flex items-center">
+                                <i class="fas fa-video text-2xl text-black-400 mr-3"></i>
+                                Montage von Filmen mit verschiedenen Kameras in Adobe Premiere Pro
+                            </button>
+                            <button class="flex items-center">
+                                <i class="fas fa-closed-captioning text-2xl text-black-400 mr-3"></i>
+                                Untertitel in beliebiger Sprache
+                            </button>
+                            <button class="flex items-center">
+                                <i class="fas fa-adjust text-2xl text-black-400 mr-3"></i>
+                                Grundlegende Farbkorrektur
+                            </button>
+                            <button class="flex items-center">
+                                <i class="fas fa-wind text-2xl text-black-400 mr-3"></i>
+                                Grundlegende Audioreinigung
+                            </button>
+                            <button class="flex items-center">
+                                <i class="fas fa-music text-2xl text-black-400 mr-3"></i>
+                                Spezialeffekte Audio/Mischung
+                            </button>
+                            <button class="flex items-center">
+                                <i class="fas fa-play text-2xl text-black-400 mr-3"></i>
+                                Soundeffekte und Musik von Artlist
+                            </button>
                         </div>
-                        <div class="about-image">
-                            <img src="{{ url_for('static', filename='images/studio.jpg') }}"
-                                class="w-full h-80 filter brightness-40 contrast-[1.1] sepia-70" />
-                            <div class="absolute inset-0 bg-black bg-opacity-40 pointer-events-none"></div>
 
+
+                        <h2 class="text-5xl font-bold text-center mb-16 section-title drop-shadow-lg">Formate</h2>
+                        <div class="formats-grid">
+                            <button><i class="fas fa-check mr-2 text-red-400"></i>Sozial media shorts</button>
+                            <button><i class="fas fa-check mr-2 text-red-400"></i>Interviews / Umfragen</button>
+                            <button><i class="fas fa-check mr-2 text-red-400"></i>Videopodcast, YouTube Format</button>
+                            <button><i class="fas fa-check mr-2 text-red-400"></i>Short Filme</button>
+                            <button><i class="fas fa-check mr-2 text-red-400"></i>Dokus</button>
                         </div>
+                        <section id="contact" class="py-10">
+                            <div class="container mx-auto px-6">
+                                <h2 class="text-5xl font-bold text-center mb-8 section-title">Kontakt</h2>
+                                <div
+                                    class="max-w-2xl mx-auto flex flex-col md:flex-row items-center justify-center md:space-x-6 space-y-4 md:space-y-0">
+                                    <a href="mailto:tomaszkuster01@gmail.com"
+                                        class="contact-link flex items-center space-x-2 text-red-400 hover:text-white transition-colors">
+                                        <i class="fas fa-envelope text-xl"></i>
+                                        <span>tomaszkuster01@gmail.com</span>
+                                    </a>
+                                    <a href="tel:+491234567890"
+                                        class="contact-link flex items-center space-x-2 text-red-400 hover:text-white transition-colors">
+                                        <i class="fas fa-phone text-xl"></i>
+                                        <span>+49 176 433 741 14</span>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="social-links flex justify-center space-x-6 mt-12 ">
+                                    <a href="https://instagram.com/tomasz_kuster" target="_blank"
+                                        class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" target="_blank"
+                                        class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
+                                        <i class="fab fa-vimeo-v"></i>
+                                    </a>
+                                    <a href="https://youtube.com/@tomaszkuster01" target="_blank"
+                                        class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-400/20 transition-colors">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+
+
+                            </div>
                     </div>
-                </div>
-        </section>
-
-        <section class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <p class="text-lg text-gray-300 mb-2 leading-relaxed text-center">
-                        Ich bin Tomasz, 24, Video Cutter aus Berlin.
-
-                        Filme schneiden war nie „nur ein Job“. Ich habe schon als Kind angefangen, mit Bildern zu
-                        erzählen - erst im Kinderfernsehen, dann mit eigenen Projekten. Irgendwann war klar: Das ist
-                        mein Ding. Heute schneide ich für eine Regisseurin, mit der ich seit Jahren zusammenarbeite.
-                        Wir haben gemeinsam viele freie Produktionen umgesetzt - Dokus, Kurzfilme. Für
-                        eine eigene Webserie habe ich sogar Fördergeld bekommen. Alles selbst gemacht - von Konzept
-                        bis Schnitt.
-                    </p>
-                    <p class="text-lg text-gray-300 mb-8 leading-relaxed text-center">
-
-                        Ich liebe es, mit Musik, Rhythmus und Bild Emotionen zu erzeugen. Der Moment, wenn eine
-                        Szene plötzlich funktioniert, weil der Schnitt sitzt - das ist der Grund, warum ich das
-                        mache. Ich arbeite gern im Team, bringe Ideen ein, bin neugierig, direkt und mache einfach.
-                        Technik kann ich - Kamera, Ton, Schnittprogramme - aber wichtiger ist für mich immer:
-                    </p>
-
-                    <p
-                        class="cinematic-question text-xl md:text-4xl text-center text-red-400 tracking-wide my-4 transition-transform duration-100 hover:scale-110">
-                        Was willst du erzählen?
-                    </p>
+            </section>
+        </main>
 
 
-                    <p class="text-lg text-gray-300 mt-12 mb-4 leading-relaxed text-center">
-
-
-                    </p>
-
-                    <div class="skills-container max-w-4xl mx-auto grid grid-cols-3 gap-4">
-                        <button class="skill-btn"
-                            aria-label="Montage von Filmen mit verschiedenen Kameras in Adobe Premiere Pro">
-                            <i class="fas fa-cut"></i>
-                            <span class="skill-text">Montage in Adobe Premiere
-                                Pro</span>
-                        </button>
-                        <button class="skill-btn" aria-label="Untertitel in beliebiger Sprache">
-                            <i class="fas fa-closed-captioning"></i>
-                            <span class="skill-text">Untertitel in beliebiger Sprache</span>
-                        </button>
-                        <button class="skill-btn" aria-label="Grundlegende Farbkorrektur">
-                            <i class="fas fa-adjust"></i>
-                            <span class="skill-text">Grundlegende Farbkorrektur</span>
-                        </button>
-                        <button class="skill-btn" aria-label="Grundlegende Audioreinigung">
-                            <i class="fas fa-wind"></i>
-                            <span class="skill-text">Grundlegende Audioreinigung</span>
-                        </button>
-                        <button class="skill-btn" aria-label="Spezialeffekte Audio/Mischung">
-                            <i class="fas fa-magic"></i>
-                            <span class="skill-text">Spezialeffekte Audio/Mischung</span>
-                        </button>
-                        <button class="skill-btn" aria-label="Soundeffekte und Musik von Artlist">
-                            <i class="fas fa-music"></i>
-                            <span class="skill-text">Soundeffekte und Musik von Artlist</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="formats-section">
-            <div class="format-columns">
-                <ul class="fancy-format-list left-list">
-                    <li class="fancy-item"><span class="fancy-dot"></span> Sozial media shorts</li>
-                    <li class="fancy-item"><span class="fancy-dot"></span> Interviews / Umfragen</li>
-                    <li class="fancy-item"><span class="fancy-dot"></span> Videopodcast, YouTube Format</li>
-                </ul>
-                <ul class="fancy-format-list right-list">
-                    <li class="fancy-item"><span class="fancy-dot"></span> Short Filmy</li>
-                    <li class="fancy-item"><span class="fancy-dot"></span> Dokus</li>
-                </ul>
-            </div>
-
-        </section>
-
-        <section id="contact" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-5xl font-bold text-center mb-16 section-title">Kontakt</h2>
-
-                <div class="max-w-2xl mx-auto text-center">
-                    <p class="text-lg text-gray-300 mb-8">
-                        Hast du ein spannendes Projekt im Kopf? Ich freue mich darauf,
-                        deine Vision zum Leben zu erwecken.
-                    </p>
-
-                    <div
-                        class="contact-links flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8">
-                        <a href="mailto:tomaszkuster01@gmail.com"
-                            class="contact-link flex items-center space-x-2 text-red-400 hover:text-white transition-colors">
-                            <i class="fas fa-envelope text-xl"></i>
-                            <span>tomaszkuster01@gmail.com</span>
-                        </a>
-                        <a href="tel:+491234567890"
-                            class="contact-link flex items-center space-x-2 text-red-400 hover:text-white transition-colors">
-                            <i class="fas fa-phone text-xl"></i>
-                            <span>+49 176 433 741 14</span>
-                        </a>
-                    </div>
-
-                    <div class="social-links flex justify-center space-x-6">
-                        <a href="https://instagram.com/tomasz_kuster" target="_blank"
-                            class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" target="_blank"
-                            class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
-                            <i class="fab fa-vimeo-v"></i>
-                        </a>
-                        <a href="https://youtube.com/@tomaszkuster01" target="_blank"
-                            class="social-link w-12 h-12 bg-black/20 rounded-full flex items-center justify-center hover:bg-red-400/20 transition-colors">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="py-8 border-t border-white/10">
-            <div class="container mx-auto px-6 text-center">
-                <p class="text-gray-400">© 2025 Tomasz Kuster</p>
-            </div>
+        <footer>
+            <p>© 2025 Tomasz Kuster</p>
         </footer>
+
 
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
         <div id="overlay"></div>
