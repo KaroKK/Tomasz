@@ -179,13 +179,11 @@ a:hover, button:hover {
   margin: 2rem auto;
   user-select: none;
 
-  /* Bez gap, by kafelki były ściśle */
   gap: 0;
-  border: 1px solid #2a2a2a; /* obramowanie całej siatki */
+  border: 1px solid #2a2a2a;  
 }
 
 
-/* Każdy kafelek ma obramowanie tylko z prawej i dołu */
 .skills-grid > button, .formats-grid > button {
   border-right: 1px solid #444;
   border-bottom: 1px solid #444;
@@ -204,19 +202,16 @@ a:hover, button:hover {
   box-shadow: none;
 }
 
-/* Usuń obramowanie prawej krawędzi dla ostatniego kafelka w rzędzie */
 .skills-grid > button:nth-child(3n),
 .formats-grid > button:nth-child(3n) {
   border-right: none;
 }
 
-/* Usuń obramowanie dolnej krawędzi dla ostatniego rzędu */
 .skills-grid > button:nth-last-child(-n + 3),
 .formats-grid > button:nth-last-child(-n + 3) {
   border-bottom: none;
 }
 
-/* Różne odcienie tła, jak wcześniej */
 .skills-grid > button:nth-child(1) { background-color: #2a2a2a; }
 .skills-grid > button:nth-child(2) { background-color: #333333; }
 .skills-grid > button:nth-child(3) { background-color: #3d3d3d; }
@@ -230,8 +225,7 @@ a:hover, button:hover {
 .formats-grid > button:nth-child(4) { background-color: #242424; }
 .formats-grid > button:nth-child(5) { background-color: #2f2f2f; }
 
-/* Hover efekt */
-.skills-grid > button:hover,
+ .skills-grid > button:hover,
 .skills-grid > button:focus,
 .formats-grid > button:hover,
 .formats-grid > button:focus {
@@ -239,16 +233,14 @@ a:hover, button:hover {
   outline: none;
 }
 
-/* Animacja wjazdu */
-.skills-grid > button.visible,
+ .skills-grid > button.visible,
 .formats-grid > button.visible {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Mobilnie: 1 kolumna, usuwamy border-right */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
   .skills-grid, .formats-grid {
     grid-template-columns: 1fr;
     max-width: 320px;
@@ -456,8 +448,8 @@ a:hover, button:hover {
 }
 
 main {
-  min-height: calc(100vh - 80px); /* odejmij wysokość nagłówka jeśli jest fixed */
-  padding-bottom: 80px; /* wysokość stopki */
+  min-height: calc(100vh - 80px);  
+  padding-bottom: 80px;  
   box-sizing: border-box;
 }
 
