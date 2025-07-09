@@ -742,6 +742,7 @@ footer {
 
 #youtube-modal {
     transition: opacity 0.3s ease;
+    z-index: 2000 !important;
 }
 
 #youtube-modal:not(.opacity-0) {
