@@ -94,10 +94,11 @@
                         {% for project in projects %}
                         <div class="project-card glass-panel p-6 rounded-2xl cursor-pointer"
                             data-category="{{ project.category | lower }}">
-                            <div class="project-image h-36 rounded-lg mb-6 relative overflow-hidden cursor-pointer"
+                            <div class="project-image w-90 h-auto rounded-lg mb-6 relative overflow-hidden cursor-pointer"
                                 data-youtube-id="{{ project.youtubeId }}">
-                                <img src="https://img.youtube.com/vi/{{ project.youtubeId }}/hqdefault.jpg"
+                                <img src="{% if project.thumbnail %}{{ url_for('static', filename=project.thumbnail) }}{% else %}https://img.youtube.com/vi/{{ project.youtubeId }}/hqdefault.jpg{% endif %}"
                                     alt="{{ project.title }}" class="w-full h-full object-cover" />
+
                                 <div
                                     class="video-overlay absolute inset-0 bg-black/10 flex items-center justify-center">
                                     <i class="fas fa-play-circle text-5xl text-red-400 drop-shadow-lg"></i>

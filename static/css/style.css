@@ -127,7 +127,6 @@ a:hover, button:hover {
 }
 
 .project-card:hover {
-    border: 1px solid #e53935;
     box-shadow: 0 8px 32px #6e6d6d33;
 }
 
@@ -762,10 +761,7 @@ footer {
   transition: filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-.highlighted .video-overlay {
-  background: rgba(245, 249, 230, 0.497);
-  transition: background 0.3s ease;
-}
+
 
 .latraka-effect {
   pointer-events: none;
